@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Momo+Signature&display=swap');
+
+p{
+    font-size: large;
+    font-weight: 100;
+
+}
+
+#b{
+    border: 6px dotted #098f09;
+    width: 500px;
+    font-style: italic;
+    font-variant: small-caps;
+    font-family: "Momo Signature", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+#a{
+    border: 3px dashed #f40707;
+    width: 500px;
+}

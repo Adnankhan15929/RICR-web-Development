@@ -1,0 +1,32 @@
+*{
+    background-color: rgb(58, 89, 102);
+}
+h1{
+    background-color: aqua;
+}
+
+p{
+    background-color: red;
+}
+
+.A{
+    background-color: blue;
+}
+
+#abc{
+    background-color: chartreuse;
+}
+
+#ad{
+    background-color: #FEEBE7;
+}
+
+h2{
+    background: #9b2a64;
+background: linear-gradient(90deg, rgba(155, 42, 100, 1) 0%, rgba(87, 193, 199, 1) 70%, rgba(237, 221, 83, 1) 100%);
+}
+
+h1{
+    background: #9b2a64;
+background: radial-gradient(circle, rgba(155, 42, 100, 1) 0%, rgba(87, 193, 199, 1) 70%, rgba(237, 221, 83, 1) 100%);
+}
