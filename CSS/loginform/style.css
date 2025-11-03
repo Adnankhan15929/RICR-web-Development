@@ -1,0 +1,70 @@
+#mainbox{
+    border: 1px solid #000;
+    height: 500px;
+    width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgb(rgb(250, 247, 247), 0.9);
+    border-radius: 10px;
+    box-shadow: 9px 9px 1px 5px gray;
+    opacity: 50px;
+}
+
+#formHeading{
+    text-align: center;
+    color: blue;
+}
+
+body{
+    background-color: rgb(228, 162, 162);
+    background: url(./demo-image2.png);
+    /* background-size: cover;  for large pixels*/ 
+
+}
+
+.formField label{
+       padding: 20px;
+    color: blueviolet;
+}
+
+.formField input{
+       padding: 20px;
+    color: blueviolet;
+    border-radius: 90px;
+    outline-color: rgb(255, 0, 183);
+    border: 2px black solid;
+}
+#formControl{
+    margin: auto;
+    width: fit-content;
+
+    button{
+        margin: 50px;
+        border-radius: 45;
+    }
+}
+
+.formpass {
+    padding: 20px;
+    color: chartreuse;
+}
+
+#submitButton{
+    background-color: yellow;
+    color: black;
+}
+
+#submitButton:active{
+    background-color: rgb(38, 225, 66);
+    color: rgb(255, 0, 0);
+}
+
+#cancleButton{
+    background-color: rgb(53, 53, 17);
+    color: rgb(238, 44, 44);
+}
+
+#cancleButton:active{
+    background-color: rgb(0, 8, 251);
+    color: rgb(250, 247, 247);
+}
