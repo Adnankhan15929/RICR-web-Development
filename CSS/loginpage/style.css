@@ -1,0 +1,9 @@
+#mainbox{
+    border: 0px solid #000;
+    height: 70px;
+    width: 50px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: blue;
+    border-radius: 5px;
+}
