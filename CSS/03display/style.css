@@ -1,0 +1,28 @@
+#d0{
+    width: 500px;
+    height: 500px;
+    border: 10px solid black;
+    display: none;
+}
+
+
+#d1{
+    width: 500px;
+    height: 500px;
+    border: 10px solid black;
+    display: block;
+}
+
+#d2{
+    width: 500px;
+    height: 500px;
+    border: 10px solid rgb(4, 4, 4);
+    display: inline;
+}
+
+#s1{
+    width: 500px;
+    height: 500px;
+    border: 10px solid rgb(0, 0, 0);
+    display: inline-block;
+}

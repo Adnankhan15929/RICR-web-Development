@@ -1,9 +1,25 @@
 #mainbox{
-    border: 0px solid #000;
-    height: 70px;
-    width: 50px;
+    box-align: center;
+    border: 1px solid #000;
+    height: 500px;
+    width: 500px;
     margin: 50px auto;
     padding: 20px;
     background-color: blue;
     border-radius: 5px;
+}
+
+#innerbox{
+    background-color: white;
+    border-radius: 5px;
+    height: 350px;
+    width: 350px;
+
+} 
+#login{
+    border-color: 3px solid blue;
+}
+
+#email{
+    border: none ;
 }
