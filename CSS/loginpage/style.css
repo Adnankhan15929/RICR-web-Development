@@ -12,14 +12,14 @@ body{
     border-radius: 5px;
     height: 260px;
     width: 250px;
-} 
+}
 #login{
     margin-top: 0px;
 }
 #lo{
    border-bottom: 3px solid blue; 
 }
-#password,#email
+#password,#d1
 { 
     font-size: 17px;
     border-bottom: 2px solid gray;

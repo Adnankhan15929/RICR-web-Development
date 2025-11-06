@@ -4,39 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=lock" />
     <link rel="stylesheet" href="style.css" />
-    
   </head>
   <body>
     <div id="innerbox">
       <h1 id="login"><span id="lo">Lo</span>gin</h1>
-      <br />
-      <div id="email">
-        <span>&#9993;</span>
+
+      <div id="d1">
+       <span class="material-symbols-outlined">&#9993;</span>
         <input
           type="email"
           placeholder="Enter your email"
           style="border: none; letter-spacing: 1px"
         />
       </div>
+
       <br />
+
       <div id="password">
-        <span>&#9993;</span>
+        <span class="material-symbols-outlined">lock</span>
         <input
           type="password"
           placeholder="confirm a password"
           style="border: none; letter-spacing: 1px"
         />
       </div>
+
       <br />
-      <div id="Remember" style="font-size: 13px;">
+      <div id="Remember" style="font-size: 13px">
         <input type="checkbox" />Remember me
         <span id="fp"> Forget password? </span>
       </div>
-      <div >
-        <button id="login2" >Login Now </button>
+      <div>
+        <button id="login2">Login Now</button>
       </div>
-      <div id="account">Don't have an account? <span style="color: blue;">Signup now</span></div>
+      <div id="account">
+        Don't have an account? <span style="color: blue">Signup now</span>
+      </div>
     </div>
   </body>
 </html>
