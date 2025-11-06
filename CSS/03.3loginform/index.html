@@ -5,49 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #mainbox{
+#mainbox{
     border: 1px solid #000;
     height: 500px;
     width: 500px;
     margin: 50px auto;
     padding: 20px;
-    background-color: rgb(rgb(250, 247, 247), 0.9);
     border-radius: 10px;
     box-shadow: 9px 9px 1px 5px gray;
     opacity: 50px;
 }
 
-#formHeading{
-    text-align: center;
-    color: blue;
-}
-
 body{
     background-color: rgb(228, 162, 162);
-    background: url(./demo-image2.png);
+    /* background: url(./demo-image2.png); */
     /* background-size: cover;  for large pixels*/ 
-
 }
 
 .formField label{
        padding: 20px;
-    color: blueviolet;
+    color: rgb(100, 15, 186);
 }
 
 .formField input{
        padding: 20px;
-    color: blueviolet;
+    color: rgb(12, 10, 17);
     border-radius: 90px;
     outline-color: rgb(255, 0, 183);
     border: 2px black solid;
 }
-#formControl{
+#fromControl{
     margin: auto;
     width: fit-content;
 
     button{
-        margin: 50px;
-        border-radius: 45;
+        margin: 5px;
+        border-radius: 45px;
     }
 }
 
@@ -79,23 +72,23 @@ body{
 </head>
 <body>
     <div id="mainbox">
-    <h1 id="formHeading" style="color: brown; text-align: end;">
-        user login
-    </h1>
-    <div id="loginForm">
-        <div class="formField">
-            <label for="userName">Username:</label>
-            <input type="text" name="userName" id="userName" autocomplete="off">
-        </div>
-        <div class="formpass">
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password" >
-        </div>
-        <div id="fromControl">
-            <button id="submitButton">submit</button>
-            <button id="cancleButton">cancel</button>
+        <h1 id="formHeading" style="color: brown; text-align: end;">
+            user login
+        </h1>
+        <div id="loginForm">
+            <div class="formField">
+                <label for="userName">Username:</label>
+                <input type="text" name="userName" id="userName" autocomplete="off">
+            </div>
+            <div class="formpass">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" >
+            </div>
+            <div id="fromControl">
+                <button id="submitButton">submit</button>
+                <button id="cancleButton">cancel</button>
+            </div>
         </div>
     </div>
-</div>
 </body>
 </html>

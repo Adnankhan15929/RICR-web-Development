@@ -1,25 +1,59 @@
-#mainbox{
-    box-align: center;
-    border: 1px solid #000;
-    height: 500px;
-    width: 500px;
-    margin: 50px auto;
-    padding: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+body{
     background-color: blue;
-    border-radius: 5px;
 }
 
 #innerbox{
+    margin: 300px auto;
+    padding: 30px;
     background-color: white;
+    border: 1px solid blue;
     border-radius: 5px;
-    height: 350px;
-    width: 350px;
-
+    height: 260px;
+    width: 250px;
 } 
 #login{
-    border-color: 3px solid blue;
+    margin-top: 0px;
+}
+#lo{
+   border-bottom: 3px solid blue; 
+}
+#password,#email
+{ 
+    font-size: 17px;
+    border-bottom: 2px solid gray;
 }
 
-#email{
-    border: none ;
+#email,#password input{
+    border: none;
+}
+
+
+#fp
+{
+    font-size: 13px;
+    margin-left: 23%;
+    color: blue;
+}
+
+#login2{
+    height: 40px;
+    width: 250px;
+    margin: 10% 0% 4% 0%;
+    padding: 5% 40% 5% 40%;
+    /* padding-left: 40%;
+    padding-bottom: 30px;
+    padding-right: 40%; */
+    border: 0px solid blue;
+    border-radius: 5px;
+    font-size: 10px;
+    color: white;
+    background-color: blue;
+}
+
+#account
+{
+    font-size: 13px;
+    margin: 2% 5% 3% 12%;
 }
