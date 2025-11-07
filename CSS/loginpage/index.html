@@ -12,42 +12,118 @@
   </head>
   <body>
 
-
     <div id="innerbox">
-      <div id="login"><b><span id="lo">Lo</span>gin</b></div>
-      <br>
-      <div id="d1">
-       <span class="material-symbols-outlined">&#9993;</span>
+    
+      <div id="login">
+        <b><span id="lo">Lo</span>gin</b>
+      </div>
+
+      <br /><br>
+
+      <div id="email">
+        <span class="material-symbols-outlined">&#9993;</span>
+        
         <input
           type="email"
           placeholder="Enter your email"
-          style="border: none; letter-spacing: 1px;"
-        />
+          id="enterYourEmail"/>
       </div>
 
-      <br />
+      <br /><br>
 
       <div id="password">
         <span class="material-symbols-outlined">lock</span>
         <input
           type="password"
           placeholder="Confirm a password"
-          style="border: none; letter-spacing: 1px"
+          id="enterYourPassword"
+        />
+      </div>
+      <div id="rememberMe">
+        
+        <input type="checkbox" />Remember me
+
+        <span id="forgotPassword">Forgot password?</span>
+
+      </div>
+
+      <div>
+        <button id="loginNow">Login Now</button>
+      </div>
+
+      <div id="dontHaveAnAccount">
+        Don't have an account?
+        <span id="signUpNow">Signup Now</span>
+      </div>
+
+    </div>
+
+
+
+
+
+
+    <div id="innerbox2">
+
+      <h1 id="registration"><span id="Re">Re</span>gistration</h1>
+      <br>
+
+      <div id="name">
+       
+        <span class="material-symbols-outlined">person</span>
+      
+       <input
+          type="name"
+          placeholder="Enter your name" id="enterYourName"/>
+      </div>
+
+      <br><br>
+
+      <div id="email">
+
+       <span class="material-symbols-outlined">&#9993;</span>
+
+        <input
+          type="email"
+          placeholder="Enter your email" id="enterYourEmail"/>
+      </div>
+
+      <br /><br>
+
+      <div id="createpassword">
+        <span class="material-symbols-outlined">lock</span>
+        <input
+          type="createpassword"
+          placeholder="Create a password" id="enterYourCreatePassword"
         />
       </div>
 
-      <br />
-      <div id="Remember" style="font-size: 13px">
-        <input type="checkbox" />Remember me
-        <a href="Sign up" id="fp">Forgot password</a>
+      <br /><br>
+
+      <div id="password">
+        <span class="material-symbols-outlined">lock</span>
+        <input
+          type="password"
+          placeholder="Confirm a password" id="enterYourPassword"
+        />
       </div>
+
+      <div id="iAcceptAllTermsAndConditions">
+      
+        <input type="checkbox" />I accept all terms & conditions
+
+      </div>
+
+      <br>
       <div>
-        <button id="login2">Login Now</button>
+        <button id="registerNow">Register Now</button>
       </div>
-      <div id="account">
-        Don't have an account? 
-        <a href="Sign up">Signup Now</a>
+
+      <div id="alreadyHaveAnAccount">
+        Already have an account? 
+        <span id="loginNowInRegistration">Login Now</span>
       </div>
+
     </div>
-</body>
+  </body>
 </html>
