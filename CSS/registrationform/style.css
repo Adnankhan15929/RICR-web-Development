@@ -1,42 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
 body{
     background-color: blue;
+    padding-left: 25%;
 }
 
 #innerbox{
-    margin: 230px auto;
+    margin: 300px auto;
     padding: 30px;
     background-color: white;
     border: 1px solid blue;
     border-radius: 5px;
-    height: 300px;
-    width: 300px;
+    height: 260px;
+    width: 250px;
+    display: inline-block;
+}
+
+#innerbox2{
+    margin: 25px auto;
+    padding: 30px;
+    background-color: white;
+    border: 1px solid blue;
+    border-radius: 5px;
+    height: 350px;
+    width: 250px;
+    display: inline-block;
 }
 #login{
-    font-size: 175%;
+    margin-top: 0px;
 }
 #lo{
    border-bottom: 3px solid blue; 
 }
-#password,#d1
-{
-    
+#password,#d1,#createpassword
+{ 
+    font-size: 17px;
+    padding-left: 10%;
     border-bottom: 2px solid gray;
-    
 }
 
-#password input{
+#email,#password input{
     border: none;
-    font-size: 21px;
-    border-bottom: 32%;
 }
 
-#d1 input{
-    border: none;
-    font-size: 21px;
-    border-bottom: 32%;
-}
 
 #fp
 {
@@ -46,23 +51,18 @@ body{
 }
 
 #login2{
-    /* height: 40px; */
-    /* width: 250px; */
+    height: 40px;
+    width: 250px;
     margin: 10% 0% 4% 0%;
-    padding: 5% 29% 5% 35%;
+    padding: 5% 40% 5% 40%;
     /* padding-left: 40%;
     padding-bottom: 30px;
     padding-right: 40%; */
     border: 0px solid blue;
     border-radius: 5px;
-    font-size: 19px;
+    font-size: 10px;
     color: white;
     background-color: blue;
-    
-}
-
-#login2{
-
 }
 
 #account
