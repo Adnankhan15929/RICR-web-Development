@@ -1,0 +1,58 @@
+#header{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    height: 20px;
+    width: 1430px;
+    font-size: large;
+    /* position: fixed; */
+    padding: 20px 20px 20px 0px ;
+}
+
+#materialTailwind{
+    width: 1430px;
+    margin-left: 59px;
+    font-size: 18px;
+    margin-right: 300px;
+}
+
+.material-symbols-outlined{
+    color: white;
+    font-size: medium;
+    background-color: black;
+    border: 1px solid #000;
+    border-radius: 50px
+}
+
+#page{
+    color: black;
+    background-color: white;
+}
+
+#page{
+    font-size: 17px;
+    margin-left: 28%;
+    color: black;
+}
+
+#accounts{
+    font-size: 17px;
+    margin-left: 4%;
+    color: black;
+}
+
+#docs{
+    font-size: 17px;
+    margin-left: 4%;
+    color: black;
+}
+/* 
+
+#signIn{
+    font-size: 10px;
+}
+
+#blocks {
+    margin: auto;
+    background-color: black;
+    color: white;
+}  */
