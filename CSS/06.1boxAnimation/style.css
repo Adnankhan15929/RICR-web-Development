@@ -1,0 +1,55 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+#box
+{
+    border: 1px solid #000;
+    width: 100px;
+    height: 100px;
+    position:absolute;
+    animation: movingBox 1s linear infinite;
+}
+
+@keyframes movingBox 
+{
+    0%{
+        background-color: red;;
+        top: 0px;
+        left: 0px;
+        transform: rotate(360deg);
+        transition: transform 5s;
+    }
+
+    25%{
+        background-color: yellow;
+        top: 0px;
+        left: 500px;
+        transform: rotate(360deg);
+    }
+
+    50%{
+        background-color: green;
+        top: 500px;
+        left: 500px;
+        transform: rotate(360deg);
+        transition: transform 5s;
+    }
+
+    75%{
+        background-color: blue;
+        top: 500px;
+        left: 0px;
+        transform: rotate(360deg);
+        transition: transform 5s;
+    }
+    100%{
+        background-color: red;
+        top: 0px;
+        left: 0px;
+        transform: rotate(360deg);
+        transition: transform 5s;
+    }
+    
+}
