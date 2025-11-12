@@ -19,7 +19,7 @@ body{
     position:sticky;
     div{
         display: flex;
-        gap: 30px;
+        gap: 15px;
         font-size: 17px;
         align-items: center;
         justify-content: center;
@@ -40,6 +40,7 @@ body{
     }
     z-index: 99;
 }
+
 
 #welcome{
     padding: 140px 70px;
@@ -72,6 +73,10 @@ body{
     font-size: 15px;
 }
 
+#email input{
+   border: 1px solid rgb(160, 160, 160);
+}
+
 #Im{
     color: grey;
     font-size: 20px;
@@ -93,10 +98,11 @@ body{
 #myAwesomeClients{
     color: #333434;
     text-align: center;
-    img{
-        padding: 0px;
-        margin: 0px;
-    }
+    
+}
+
+#netfliximg{
+    padding-left: 12%;
 }
 
 #my{
@@ -114,7 +120,7 @@ body{
 }
 #imNot{
     color: rgb(147, 147, 147);
-    font-size: large;
+    font-size: 20px;
     text-align: center;
     padding-bottom: 100px;
 }
@@ -122,13 +128,14 @@ body{
 #sixBoxes{
     border-right: 1px solid #000;
     display: grid;
-    grid-template-rows: 100px 100px;
+    grid-template-rows: 230px 100px;
     grid-template-columns: 350px 350px 350px;
     gap: 100px;
     padding: 10px;
     justify-content: center;
     h3{
         color: #333434;
+        padding-bottom: 15px;
     }
     .subclass{
         color: rgb(147, 147, 147);
@@ -145,7 +152,122 @@ body{
 }
 #whether{
     color: rgb(147, 147, 147);
-    font-size: large;
+    font-size: 20px; 
     text-align: center;
     padding-bottom: 100px;
+}
+
+
+#eightBoxes{
+    justify-content: center;
+    border-right: 1px solid #000;
+    display: grid;
+    grid-template-rows: 450px 400px;
+    grid-template-columns: 340px 340px 340px 340px;
+    img{
+        width: 300px;
+        height: 190px;
+        border-radius: 10px;
+        justify-content: left;
+    }
+    .heading{
+        color: #181818;
+        font-size: 20px;
+        padding-bottom: 13px;
+    }
+    .subtext{
+        color: rgb(147, 147, 147);
+        
+    }
+    button{
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+            padding: 7px 12px;
+            align-items: center; 
+            font-size: 12px;
+        }
+}
+
+#myResume{
+    margin: 180px 60px;
+    display: flex;
+    align-items: center;
+    .h1{
+        font-size: 35px;
+    }
+    p{
+        margin: 15px 0px;
+        color: rgb(147, 147, 147);
+    }
+    button{
+        padding: 12px 23px;
+        border: none;
+        font-size: 10px;
+        background: white;
+        border-radius: 5px;
+    }
+}
+
+#viewMore{
+    button:hover{
+        background-color: rgb(226, 222, 222);
+    }
+}
+
+#threeBoxes{
+    padding-left: 400px;
+    display: inline-block;
+    .subBox{
+        padding: 10px;
+        font-size: 17px;
+        span{
+            padding-left: 10px;
+            color: rgb(147, 147, 147);
+        }
+        .material-symbols-outlined{
+            background: #000;
+            color: white;
+            font-size: 30px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    }
+
+}
+
+#whatClientsSay{
+    padding-top: 40px;
+    color: #333434;
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+}
+
+#discover{
+    padding: 15px;
+    color: rgb(147, 147, 147);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+}
+
+#twoBoxes{
+    margin: 200px 280px;
+    p{
+        color: rgb(147, 147, 147);
+        michael{
+            color: black;
+        }
+    }
+    display: inline-block;
+}
+
+#marketing{
+        color: rgb(147, 147, 147);
+    }
+
+#imageofkalu{
+        display: inline-block;
 }
