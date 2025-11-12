@@ -89,3 +89,63 @@ body{
     position: absolute;
     display: inline-block;
 }
+
+#myAwesomeClients{
+    color: #333434;
+    text-align: center;
+    img{
+        padding: 0px;
+        margin: 0px;
+    }
+}
+
+#my{
+    color: #333434;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+}
+#what{
+    color: #333434;
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+#imNot{
+    color: rgb(147, 147, 147);
+    font-size: large;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+#sixBoxes{
+    border-right: 1px solid #000;
+    display: grid;
+    grid-template-rows: 100px 100px;
+    grid-template-columns: 350px 350px 350px;
+    gap: 100px;
+    padding: 10px;
+    justify-content: center;
+    h3{
+        color: #333434;
+    }
+    .subclass{
+        color: rgb(147, 147, 147);
+        text-align: center ;
+    }
+}
+
+#myProjects{
+    padding-top: 200px;
+    color: #333434;
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+}
+#whether{
+    color: rgb(147, 147, 147);
+    font-size: large;
+    text-align: center;
+    padding-bottom: 100px;
+}
