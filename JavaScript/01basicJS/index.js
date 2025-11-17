@@ -6,7 +6,7 @@ let b = 10;
 
 console.log(a, b);
 
-let ar = ["abc", 123, "!@#", "a", 234, "543", "True"];
+let ar = ["abc", 123, '!@#', "a", 234, "543", "True"];
 console.log(ar);
 
 alert("this is alert")
