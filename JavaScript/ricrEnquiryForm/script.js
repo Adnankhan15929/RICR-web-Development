@@ -33,7 +33,7 @@ function SubmitForm() {
   console.log("Business Analyst: ",Business);
   console.log("Java Programming: ",java);
   console.log("Python Programming: ",Python);
-  console.log(" C/C++ Programming: ",c);
+  console.log("C/C++ Programming: ",c);
   console.log("Other: ",Other);
   console.log("Source of Information: ",Source);
   console.log("Name of Executive: ",Executive);
