@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task 02</title>
+     <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />  -->
 </head>
 <body>
     <fieldset id="pizzaForm">
@@ -45,12 +56,12 @@
         </div>
         <br>
         <div>
-            <label for="Flavor">Flavor:</label>
+            <label for="Flavor" id="Flavor">Flavor:</label>
             <br>
             
             <input type="checkbox" name="Flavor" id="Hawaiian">
             <span>Hawaiian (Php 150.00)</span>&emsp;
-            <select name="Flavor" id="Hawaiian (Php 150.00)">
+            <select name="Flavor" id="HawaiianOpt">
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -59,7 +70,7 @@
             <br>
             <input type="checkbox" name="Flavor" id="Pepperoni">
             <span>Pepperoni (Php 140.00)</span>&emsp;
-            <select name="Flavor" id="Pepperoni (Php 140.00)">
+            <select name="Flavor" id="PepperoniOpt">
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -68,7 +79,7 @@
             <br>
             <input type="checkbox" name="Flavor" id="Vegetable">
             <span>Vegetable (Php 130.00)</span>&emsp;
-            <select name="Flavor" id="Vegetable (Php 130.00)">
+            <select name="Flavor" id="VegetableOpt">
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -91,7 +102,7 @@
              <textarea name="address" id="additionalNote"></textarea>
              <br>
              <br>
-             <button id="submitOrder">Submit Order</button>
+             <button id="submitorder" onclick="submitOrder()">Submit Order</button>
         </div>
 
     </fieldset>

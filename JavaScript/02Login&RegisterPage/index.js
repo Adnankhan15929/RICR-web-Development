@@ -12,6 +12,7 @@ function login(){
     document.getElementById("loginConfirmPassword").value="";
 }
 
+
 function registration()
 {
     console.log("Registration Button Clicked");
