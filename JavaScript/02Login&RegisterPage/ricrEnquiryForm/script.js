@@ -20,6 +20,7 @@ function SubmitForm() {
   alert(
     "Registration Completed ! Thank You for Registration we get Your Details Please wait some Time...."
   );
+  
   console.log("Name: ",personName);
   console.log("Contact Number: ",contactNumber);
   console.log("Email: ",email);
