@@ -1,0 +1,14 @@
+#content{
+    height: 92vh;
+}
+
+#image{
+    
+    max-width: 1000px;
+    max-height: 600px;
+}
+
+#workspace label{
+    top:50%;
+    left: 45%;
+}
