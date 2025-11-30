@@ -118,41 +118,6 @@
             </div>
           </div>
 
-          <div class="w-100 border rounded shadow p-2 mb-3">
-            <input
-              type="range"
-              name="huerotate"
-              id="huerotate"
-              min="0"
-              max="100"
-              value="50"
-              onchange="changeHuerotate()"
-              class="form-range px-3"
-            />
-            <div class="px-3 d-flex justify-content-between w-100">
-              <span>0</span>
-              <label for="hue-rotate">Hue-rotate</label>
-              <span>100</span>
-            </div>
-          </div>
-
-          <div class="w-100 border rounded shadow p-2 mb-3">
-            <input
-              type="range"
-              name="blur"
-              id="blur"
-              min="0"
-              max="100"
-              value="0"
-              onchange="changeBlur()"
-              class="form-range px-3"
-            />
-            <div class="px-3 d-flex justify-content-between w-100">
-              <span>0</span>
-              <label for="blur">Blur</label>
-              <span>100</span>
-            </div>
-          </div>
 
           <div class="w-100 border rounded shadow p-2 mb-3">
             <input
@@ -170,6 +135,16 @@
               <label for="invert">Invert</label>
               <span>100</span>
             </div>
+          </div>
+
+          <div class="d-flex flex-column gap-3 mt-5">
+            <button class="btn btn-outline-warning" onclick="reset()">
+              <i class="bi bi-arrow-clockwise"></i>Reset
+            </button>
+            <button class="btn btn-outline-success" onclick="download()">
+              <i class="bi bi-download"></i>Download
+            </button>
+            <label for="Upload" id="uploadAnotherLabel" class="btn btn-outline-primary"><i class="bi bi-camera"></i> Upload Another Image</label>
           </div>
           
         </div>
