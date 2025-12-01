@@ -2,14 +2,15 @@ let b = 1,
     c=1,
     g=0,
     s=0,
-    i=0
+    i=0,
     sa=0;
 
 const img = document.getElementById("image");
 
 console.log(img.src);
 
-if (img.src === "http://127.0.0.1:5500/JavaScript/ImageEditor/index.html") {
+if (img.src === "http://127.0.0.1:5500/JavaScript/ImageEditor/index.html")
+{
   document.getElementById("image").style.display = "none";
 }
 
