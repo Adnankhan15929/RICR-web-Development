@@ -1,0 +1,13 @@
+#mainBox{
+    height: 92vh;
+}
+
+#workSpace label{
+    top: 50%;
+    left: 45%;
+}
+
+#image {
+    max-width: 1000px;
+    max-height: 600px;
+}
