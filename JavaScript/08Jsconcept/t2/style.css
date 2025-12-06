@@ -1,0 +1,23 @@
+#bulb {
+  padding: 50px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  width: fit-content;
+}
+
+.col{
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  width: fit-content;
+  
+}
+
+.colors{
+  display: flex;
+  gap: 2%;
+}
+
+#c1{
+
+}
