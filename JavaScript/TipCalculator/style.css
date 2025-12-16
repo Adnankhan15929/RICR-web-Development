@@ -1,0 +1,36 @@
+#ic{
+    width:420px;
+    height: 500px;
+}
+
+#b{
+    background: rgb(1, 1, 74);
+}
+
+input{
+    width: 300px;
+    border: 1px solid #000;
+    border-top: blue;
+    border-left: blue;
+    border-right: blue;
+    border-color: blue;
+    
+}
+
+#head{
+    background-color: orange;
+}
+
+#select{
+    width: 300px;
+    border-top: blue;
+    border-left: blue;
+    border-right: blue;
+    border-color: blue;
+
+}
+
+input:focus{
+    outline: blue;
+    border: 1px solid blue;
+}
