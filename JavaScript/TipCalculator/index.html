@@ -19,7 +19,7 @@
 <body id="b">
 
     <header>
-        <div class="fs-5 py-2 w-50 container mt-3 mb-1 rounded-top-5 text-center text-white" id="head">
+        <div class="fs-5 py-2 w-25 container mt-3 mb-1 rounded-top-5 text-center text-white" id="head">
             TIP CALCULATOR
         </div>
     </header>
@@ -27,25 +27,28 @@
     
     <div class="p-4 container rounded-5 bg-white" id="ic">
         <label for="billAmount" class="fs-5">Bill Amount</label><br>
-        <input type="number" class="" placeholder="Amount to be paid">
+        <input type="number" id="billAmount" placeholder="Amount to be paid">
         <span class="fw-bold fs-4">₹</span>
 
 
         <label for="billAmount" class="py-2 fs-5">How was the service ?</label><br>
 
-        <select id="select" class=""> 
+        <select id="select"> 
             <option value="sevice0">Select</option>
-            <option value="sevice1">25% - Top Notch</option>
-            <option value="sevice2">20% - Excellent</option>
-            <option value="sevice3">15% - Good</option>
-            <option value="sevice4">10% - Bad</option>
-            <option value="sevice5">5% - Worst</option>
+            <option value="25">25% - Top Notch</option>
+            <option value="20">20% - Excellent</option>
+            <option value="15">15% - Good</option>
+            <option value="10">10% - Bad</option>
+            <option value="5">5% - Worst</option>
         </select>
 
         <label for="billAmount" class="py-2 fs-5">Total number of persons</label><br>
-        <input type="number" class="" placeholder="Number of people sharing the bill">
+        <input type="number" id="persons" placeholder="Number of people sharing the bill">
         <br>
-        <button class="btn btn-info py-2 text-white fs-5 px-5 rounded mt-3">Calculate</button>
+        <button class="btn btn-info py-2 text-white fs-5 px-5 rounded mt-3" onclick="calculate()">Calculate</button>
+        <br><br>
+        <div id="iCB" class="fs-3 text-center">
+        </div>
     </div>
 
    <script
