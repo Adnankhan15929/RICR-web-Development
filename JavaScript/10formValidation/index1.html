@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div
+        class="navbar justify-content-center bg-primary fw-bold fs-4 text-white text-center p-3"
+      >
+        Form Validation
+      </div>
+    </header>
+
+    <section>
+      <div class="d-grid gap-3 p-3 text-center mx-5 my-2">
+        <div class="w-100 px-5">
+          <div class="d-flex justify-content-between">
+            <label for="fullname">FullName :</label>
+            <input
+              type="text"
+              class="w-75 p-2 rounded border"
+              id="fullname"
+              autocomplete="no"
+              name="fullname"
+            />
+          </div>
+          <span id="NameE" class="text-danger fs-6 float-end Error"></span>
+        </div>
+        <div class="w-100 px-5">
+          <div class="d-flex justify-content-between">
+            <label for="email">Email :</label>
+            <input
+              type="email"
+              class="w-75 p-2 rounded border"
+              id="email"
+              autocomplete="no"
+              name="email"
+            />
+          </div>
+          <span id="EmailE" class="text-danger fs-6 float-end Error"></span>
+        </div>
+        <div class="w-100 px-5">
+          <div class="d-flex justify-content-between">
+            <label for="Phone">Phone :</label>
+            <input
+              type="number"
+              class="w-75 p-2 rounded border"
+              id="Phone"
+              autocomplete="no"
+              name="Phone"
+            />
+          </div>
+          <span id="PhoneE" class="text-danger fs-6 float-end Error"></span>
+        </div>
+        <div class="w-100 px-5">
+          <div class="d-flex justify-content-between">
+            <label for="dob">Date of Birth :</label>
+            <input
+              type="date"
+              class="w-75 p-2 rounded border"
+              id="dob"
+              name="dob"
+              autocomplete="no"
+            />
+          </div>
+          <span id="dobE" class="text-danger fs-6 float-end Error"></span>
+        </div>
+        <div class="w-100 px-5">
+          <div class="d-flex justify-content-between">
+            <button
+              class="bg-primary text-white justify-content-center w-100 p-2 rounded border"
+              onclick="submit()"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script1.js"></script>
+  </body>
+</html>
