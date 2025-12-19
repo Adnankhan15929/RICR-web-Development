@@ -1,25 +1,30 @@
-async function getData(ID) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (ID === 3) {
-        reject("ID not Found");
-      } else {
-        console.log("Data", ID);
-        resolve("Task Done");
-      }
-    }, 2000);
-  });
+async function findData(ID)
+{
+    return new Promise((resolve,reject)=>
+    {
+        setTimeout(() => 
+        {
+            if(ID===3)
+            {
+                reject("ID not found");
+            }
+            else{
+                console.log("Data",ID);
+                resolve("Task Done");
+            }
+        }, 1000);
+    });
 }
 
-try {
-  const res = await getData(1);
-  console.log(res);  
+try{
+    const res = await findData(2);
+    console.log(res);
+    await findData(4);
+    console.log(await findData(3));
+    console.log(await findData(5));
 
-  await getData(3);
-
-  await getData(4);
-
-  await getData(5);
-} catch (error) {
-  console.log(error);
+}
+catch(error)
+{
+    console.log(error);
 }

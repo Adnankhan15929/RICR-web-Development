@@ -9,8 +9,11 @@ function getdata(ID, getNextData) {
 }
 
 getdata(1, () => {
+  // ab getnextdata chl rha h
   getdata(2, () => {
+    // ab getnextdata chl rha h
     getdata(3,()=>{
+      // ab getnextdata chl rha h
         getdata(4)
     });
   });
