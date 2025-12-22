@@ -16,7 +16,7 @@ getData(5)
     (
       res //here res store resolve value means agr resolve hoga to hi then function chlega
     ) => {
-      console.log(res);
+      // console.log(res);
       return getData(1);
     }
   )
