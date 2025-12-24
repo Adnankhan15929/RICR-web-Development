@@ -1,20 +1,27 @@
-function getdata(ID, getNextData) {
-  setTimeout(() => {
+function getdata(ID, getNextData)
+{
+  setTimeout(() => 
+  {
     console.log("DATA", ID);
 
-    if (getNextData) {
+    if (getNextData) 
+    {
       getNextData();
     }
   }, 2000);
 }
 
-getdata(1, () => {
+//callBack Hell
+getdata(1, () => 
+{
   // ab getnextdata chl rha h
-  getdata(2, () => {
+  getdata(2, () => 
+  {
     // ab getnextdata chl rha h
-    getdata(3,()=>{
+    getdata(3,()=>
+    {
       // ab getnextdata chl rha h
-        getdata(4)
+        getdata(4);
     });
   });
 });

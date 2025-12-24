@@ -28,9 +28,9 @@ async function getLatLon(city) {
   const response = await fetch(
     `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=1cefe43006e662107c8d0454bde6852c`
   );
-//   console.log("g",response);
-  const data = await response.json();
-//   console.log(data);
+  //   console.log("g",response);
+  const data = await response.json(); 
+  //   console.log(data);
   const lat = data[0].lat;
   const lon = data[0].lon;
   return { lat, lon };

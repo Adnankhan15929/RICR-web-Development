@@ -2,7 +2,7 @@ async function findData(ID)
 {
     return new Promise((resolve,reject)=>
     {
-        setTimeout(() => 
+        setTimeout(() =>
         {
             if(ID===3)
             {
@@ -28,3 +28,34 @@ catch(error)
 {
     console.log(error);
 }
+
+// console.log("1");
+// console.log("2");
+
+// setTimeout(()=>{
+//     console.log("helo");
+// },2000);
+// console.log("1");
+// console.log("2");
+
+
+
+
+
+// function api(id) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("weather data",id);
+//       resolve(200);
+//     }, 2000);
+//   });
+// }
+
+// async function get() 
+// {
+//     await api(3);
+//     await api(1);
+//     await api(2);
+// }
+
+// get();

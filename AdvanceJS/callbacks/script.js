@@ -30,3 +30,15 @@ function Addition(p, q, JOR) {
 }
 
 Addition(2, 3, sum);
+
+// function sum(a,b)
+// {
+//   console.log(a+b);
+// }
+
+// function calculator(a,b,sumcallback)
+// {
+//   sumcallback(a,b);
+// }
+
+// calculator(1,2,sum);
