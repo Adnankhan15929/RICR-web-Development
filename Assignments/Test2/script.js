@@ -15,7 +15,7 @@ async function dat() {
                 <br/>
                 <span id="price">${data[i].price}<span/>
                 <br/>
-                <span id="rating">${data[i].rating}<span/>
+                <span id="rating">${data[i].rating.rate}<span/>
                 <p/>
             <div/>
             <div/>`;
@@ -28,8 +28,4 @@ async function dat() {
   }
 }
 
-const homeb = document.getElementById("homeb");
-
-homeb.addEventListener("click",()=>{
-    dat()}
-);
+document.getElementById("homeb").onclick=dat();
