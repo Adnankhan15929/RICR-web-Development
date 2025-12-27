@@ -24,7 +24,7 @@ function registration()
     console.log("Name : ",name);
     console.log("Email : ",email);
     console.log("Password : ",createP);
-    console.log("Connfirm Password : ",confirmP);
+    console.log("Confirm Password : ",confirmP);
 
     alert("Register Done");
 
