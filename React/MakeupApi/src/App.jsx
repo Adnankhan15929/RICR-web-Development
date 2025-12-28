@@ -15,7 +15,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </BrowserRouter>
 
       {/* <div className="bg-[#F54927] text-white font-bold text-center size mt-4">
