@@ -12,6 +12,7 @@ const Header = () => {
           <span className="flex justify-center items-center gap-1"><IoHome/>Home</span></Link>
           <Link className="" to={"/about"}>
           <span className="flex justify-center items-center gap-1"><FcAbout className="text-black"/>About</span></Link>
+          <Link className="" to={"/contact"}><span className="flex justify-center items-center gap-1">Contact</span></Link>
         </div>
       </div>
     </>
