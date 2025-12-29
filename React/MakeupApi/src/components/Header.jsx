@@ -10,9 +10,10 @@ const Header = () => {
         <div className="flex gap-4 justify-center items-center">
           <Link className="" to={"/"}>
           <span className="flex justify-center items-center gap-1"><IoHome/>Home</span></Link>
-          <Link className="" to={"/about"}>
-          <span className="flex justify-center items-center gap-1"><FcAbout className="text-black"/>About</span></Link>
-          <Link className="" to={"/contact"}><span className="flex justify-center items-center gap-1">Contact</span></Link>
+          <Link className="" to={"/C0"}>
+          <span className="flex justify-center items-center gap-1"><FcAbout className="text-black"/>C0</span></Link>
+          <Link className="" to={"/LoginPage"}><span className="flex justify-center items-center gap-1">LoginPage</span></Link>
+          <Link className="" to={"/C1"}><span className="flex justify-center items-center gap-1">C1</span></Link>
         </div>
       </div>
     </>

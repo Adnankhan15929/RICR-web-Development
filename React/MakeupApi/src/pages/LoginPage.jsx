@@ -2,14 +2,24 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Contact = () => {
+
+// Login form page
+
+
+const LoginPage = () => {
   const [contactData, setContactData] = useState({
     name: "",
     email: "",
     password: "",
   });
 
-  
+  const handleClearForm= () => {
+    setContactData({
+      name:"",
+      email:"",
+      password:"",
+    })
+  };
 
   const handleChange = (e) =>{
     const {name, value} = e.target;
@@ -29,6 +39,7 @@ const Contact = () => {
     finally{
       setIsLoading(false);
     }
+    handleClearForm();
   }
   return (
     <>
@@ -92,4 +103,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default LoginPage;

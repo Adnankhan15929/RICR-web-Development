@@ -2,70 +2,43 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const About = () => {
-  // const [fullName, setFullName] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [contact, setContact] = useState("");
 
-  const [contactData, setContactData] = useState({
-    fullName: "",
-    email: "",
-    contact: "",
-  });
+//multi useState for each form data
+
+
+const C0 = () => {
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [contact, setContact] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setContactData((previousData) => ({
-      ...previousData,
-      [name]: value,
-    }));
+  const handleClearForm = () => {
+    setFullName("");
+    setEmail("");
+    setContact("");
   };
- 
-  const handleClearForm = () => {};
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     setIsLoading(true);
     try {
-      const respose = await fetch(
+      const response = await fetch(
         "https://jsonplaceholder.typicode.com/posts"
       );
+      const data = {
+        fullName,
+        email,
+        contact,
+      };
+      console.log("Form Data Submitted:", data);
     } catch (error) {
       console.log(error.message);
     } finally {
       setIsLoading(false);
     }
+
     handleClearForm();
   };
-
-  // const handleClearForm = () => {
-  //   setFullName("");
-  //   setEmail("");
-  //   setContact("");
-  // };
-
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   setIsLoading(true);
-  //   try {
-  //     const response = await fetch(
-  //       "https://jsonplaceholder.typicode.com/posts"
-  //     );
-  //     const data = {
-  //       fullName,
-  //       email,
-  //       contact,
-  //     };
-  //     console.log("Form Data Submitted:", data);
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-
-  //   handleClearForm();
-  // };
 
   return (
     <>
@@ -79,8 +52,8 @@ const About = () => {
                 type="text"
                 name="fullName"
                 className="border m-3 rounded p-1 text-blue-900"
-                value={contactData.fullName}
-                onChange={handleChange}
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
                 placeholder="Enter your name"
                 required
               />
@@ -91,8 +64,8 @@ const About = () => {
                 type="email"
                 name="email"
                 className="border m-3 rounded p-1 text-blue-900"
-                value={contactData.email}
-                onChange={handleChange}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 required
               />
@@ -103,8 +76,8 @@ const About = () => {
                 type="number"
                 name="contact"
                 className="border m-3 rounded p-1 text-blue-900"
-                value={contactData.contact}
-                onChange={handleChange}
+                value={contact}
+                onChange={(e) => setContact(e.target.value)}
                 placeholder="Enter your phone no."
                 required
               />
@@ -128,13 +101,4 @@ const About = () => {
   );
 };
 
-export default About;
-
-// const About = () => {
-//   return
-//   <>
-
-//   </>;
-// };
-
-// export default About;
+export default C0;
