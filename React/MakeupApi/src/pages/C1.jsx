@@ -2,28 +2,45 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-
 //use a single useState for all form data
-
 
 const C1 = () => {
   const [contactData, setContactData] = useState({
     fullName: "",
     email: "",
     contact: "",
+    religion: "",
+    gender: "",
+    skill: [],
   });
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setContactData((previousData) => ({ ...previousData, [name]: value }));
+    const { name, value, type, checked } = e.target;
+    if (type === "checkbox") {
+      let temp = contactData.skill;
+      if (checked) {
+        temp.push(value);
+        setContactData((previousData) => ({ ...previousData, [name]: temp }));
+      } else {
+        temp = Object.values(temp); //convert to array
+        temp = temp.filter((word) => word !== value); //remove unchecked value
+        setContactData((previousData) => ({ ...previousData, [name]: temp }));
+      }
+    } else {
+      setContactData((previousData) => ({ ...previousData, [name]: value }));
+    }
   };
+  // <input type="checkbox" name="skill" value="js" onChange={handleChange} checked={Object.values(contactData.skill).includes("js")} />JS;
 
   const handleClearForm = () => {
     setContactData({
       fullName: "",
       email: "",
       contact: "",
+      religion: "",
+      gender: "",
+      skill: [],
     });
   };
 
@@ -83,6 +100,71 @@ const C1 = () => {
                 placeholder="Enter your phone no."
                 required
               />
+            </div>
+            <div className="my-5 text-lg">
+              <label htmlFor="religion">Religion</label>
+              <select name="religion" id="religion" onChange={handleChange}>
+                <option value="">Select Religion</option>
+                <option value="hindu">Hindu</option>
+                <option value="muslim">Muslim</option>
+                <option value="christian">Christian</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor="gender">Gender</label>
+              <input
+                type="radio"
+                name="gender"
+                value="male"
+                onChange={handleChange}
+                checked={contactData.gender === "male"}
+              />{" "}
+              Male
+              <input
+                type="radio"
+                name="gender"
+                value="female"
+                onChange={handleChange}
+                checked={contactData.gender === "female"}
+              />{" "}
+              Female
+              <input
+                type="radio"
+                name="gender"
+                value="other"
+                onChange={handleChange}
+                checked={contactData.gender === "other"}
+              />{" "}
+              Other
+            </div>
+            <div>
+              <label htmlFor="skill">Skill known</label>
+              <input
+                type="checkbox"
+                name="skill"
+                value="html"
+                onChange={handleChange}
+                checked={Object.values(contactData.skill).includes("html")}
+              />{" "}
+              Html
+              <input
+                type="checkbox"
+                name="skill"
+                value="css"
+                onChange={handleChange}
+                checked={Object.values(contactData.skill).includes("css")}
+              />{" "}
+              Css
+              <input
+                type="checkbox"
+                name="skill"
+                value="js"
+                onChange={handleChange}
+                checked={Object.values(contactData.skill).includes("js")}
+              />{" "}
+              JS
             </div>
             <button
               className=" bg-amber-400 border border-black me-3 rounded p-1"

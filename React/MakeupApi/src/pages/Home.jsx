@@ -102,7 +102,7 @@ const Home = () => {
           </li>
         </ul>
       </div>
-      <table className="text-center">
+      {/* <table className="text-center">
         <tr className="p-10 border">
           <th>Parameter</th>
           <th>Data type</th>
@@ -174,7 +174,7 @@ const Home = () => {
             number (exclusive)
           </td>
         </tr>
-      </table>
+      </table> */}
     </>
   );
 };

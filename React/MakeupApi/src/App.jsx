@@ -3,9 +3,11 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import C1 from "./pages/C1";  
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import C0 from "./pages/C0";
+import SignUpPage from "./pages/SignUpPage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 
 const App = () => {
   return (
@@ -19,6 +21,7 @@ const App = () => {
           <Route path="/LoginPage" element={<LoginPage />} />
           <Route path="/C1" element={<C1 />} />
           <Route path="/C0" element={<C0 />} />
+          <Route path="/SignUpPage" element={<SignUpPage />} />
         </Routes>
         {/* <Footer /> */}
       </BrowserRouter>
