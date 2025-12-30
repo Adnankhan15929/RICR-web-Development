@@ -1,6 +1,14 @@
 @import 'tailwindcss';
 
 body {
-  @apply text-neutral-700;
+  /* @apply text-neutral-700; */
   
 }
+
+#form{background: #020024;
+/* background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%); */
+}
+
+/* #bodyofForm{background: #0072a3;
+background: linear-gradient(90deg, rgba(0, 114, 163, 1) 21%, rgba(87, 199, 133, 1) 82%, rgba(250, 243, 182, 1) 100%);
+} */

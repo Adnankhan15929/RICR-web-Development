@@ -15,6 +15,7 @@ const Header = () => {
           <Link className="" to={"/LoginPage"}><span className="flex justify-center items-center gap-1">LoginPage</span></Link>
           <Link className="" to={"/C1"}><span className="flex justify-center items-center gap-1">C1</span></Link>
           <Link className="" to={"/SignUpPage"}><span className="flex justify-center items-center gap-1">SignUpPage</span></Link>
+          <Link className="" to={"/CoachingInstituteRegistrationFormWithValidation"}><span className="flex justify-center items-center gap-1">Coaching Form</span></Link>
         </div>
       </div>
     </>

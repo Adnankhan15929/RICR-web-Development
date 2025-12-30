@@ -6,6 +6,7 @@ import C1 from "./pages/C1";
 import LoginPage from "./pages/LoginPage";
 import C0 from "./pages/C0";
 import SignUpPage from "./pages/SignUpPage";
+import CoachingInstituteRegistrationFormWithValidation from "./pages/CoachingInstituteRegistrationFormWithValidation";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 
@@ -14,7 +15,7 @@ const App = () => {
     <>
       
       <BrowserRouter>
-      <Header />
+      {/* <Header /> */}
 
         <Routes>
           <Route path="/" element={<Home />} />
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/C1" element={<C1 />} />
           <Route path="/C0" element={<C0 />} />
           <Route path="/SignUpPage" element={<SignUpPage />} />
+          <Route path="/CoachingInstituteRegistrationFormWithValidation" element={<CoachingInstituteRegistrationFormWithValidation />} />
         </Routes>
         {/* <Footer /> */}
       </BrowserRouter>
