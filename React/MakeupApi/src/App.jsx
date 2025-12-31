@@ -7,8 +7,9 @@ import LoginPage from "./pages/LoginPage";
 import C0 from "./pages/C0";
 import SignUpPage from "./pages/SignUpPage";
 import CoachingInstituteRegistrationFormWithValidation from "./pages/CoachingInstituteRegistrationFormWithValidation";
-import FormbySir from "./pages/FormbySir";
+import FormbySir from "./pages/RegisterFormC2";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 
 const App = () => {
@@ -16,7 +17,7 @@ const App = () => {
     <>
       
       <BrowserRouter>
-      <Toaster position="" />
+      <Toaster/>
       <Header />
 
         <Routes>
