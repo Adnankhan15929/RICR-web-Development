@@ -7,6 +7,7 @@ import LoginPage from "./pages/LoginPage";
 import C0 from "./pages/C0";
 import SignUpPage from "./pages/SignUpPage";
 import CoachingInstituteRegistrationFormWithValidation from "./pages/CoachingInstituteRegistrationFormWithValidation";
+import FormbySir from "./pages/FormbySir";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 
@@ -15,15 +16,18 @@ const App = () => {
     <>
       
       <BrowserRouter>
-      {/* <Header /> */}
+      <Toaster position="" />
+      <Header />
 
         <Routes>
+
           <Route path="/" element={<Home />} />
           <Route path="/LoginPage" element={<LoginPage />} />
           <Route path="/C1" element={<C1 />} />
           <Route path="/C0" element={<C0 />} />
           <Route path="/SignUpPage" element={<SignUpPage />} />
           <Route path="/CoachingInstituteRegistrationFormWithValidation" element={<CoachingInstituteRegistrationFormWithValidation />} />
+          <Route path="/FormbySir" element={<FormbySir />} />
         </Routes>
         {/* <Footer /> */}
       </BrowserRouter>
