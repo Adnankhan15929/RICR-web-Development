@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
 const CoachingInstituteRegistrationFormWithValidation = () => {
-  const [validationFunction, setValidationFunction] = useState({});
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -22,6 +22,12 @@ const CoachingInstituteRegistrationFormWithValidation = () => {
     requirement: "",
     timing: "",
   });
+
+  const [validationFunction, setValidationFunction] = useState({});
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const clearForm = () => {
     setFormData({
@@ -43,11 +49,7 @@ const CoachingInstituteRegistrationFormWithValidation = () => {
     });
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    setFormData((previousData) => ({ ...previousData, [name]: value }));
-  };
+  
 
   const validate = () => {
     let Error = {};
@@ -66,35 +68,36 @@ const CoachingInstituteRegistrationFormWithValidation = () => {
     ) {
       Error.email = "*Use proper email format";
     }
-    if (!/^[6-9]\d{9}$/.test(formData.number)) {
-      Error.number = "*Only Indian numbers allowed";
-    }
+    // if (!/^[6-9]\d{9}$/.test(formData.number)) {
+    //   Error.number = "*Only Indian numbers allowed";
+    // }
 
-    if(!formData.dob>14){
-      Error.dob = "*Student is at least 15 years old"
-    }
+    // if(!formData.dob>14){
+    //   Error.dob = "*Student is at least 15 years old"
+    // }
 
-    if(!/^[A-F]+$/.test(formData.pg) || formData.pg<0 || formData.pg>100){
-      Error.pg = "*A percentage (0-100) or a letter grade (A-F)";
-    }
+    // if(!/^[A-F]+$/.test(formData.pg) || formData.pg<0 || formData.pg>100){
+    //   Error.pg = "*A percentage (0-100) or a letter grade (A-F)";
+    // }
 
-    if(!/^[A-Za-z]+$/.test(formData.city))
-    {
-      Error.city = "*City should contain only letters"
-    }
+    // if(!/^[A-Za-z]+$/.test(formData.city))
+    // {
+    //   Error.city = "*City should contain only letters"
+    // }
 
-    if(formData.pincode!==6)
-    {
-      Error.city = "*Must be exactly 6 digits"
-    }
+    // if(!formData.pincode==6)
+    // {
+    //   Error.city = "*Must be exactly 6 digits"
+    // }
 
-    if (!/^[6-9]\d{9}$/.test(formData.guardianCN)) {
-      Error.number = "*Only Indian numbers allowed";
-    }
+    // if (!/^[6-9]\d{9}$/.test(formData.guardianCN)) {
+    //   Error.number = "*Only Indian numbers allowed";
+    // }
 
     setValidationFunction(Error);
-    return Objects.keys(Error).length > 0 ? false : true;
+    return Object.keys(Error).length > 0 ? false : true;
   };
+
   const submitForm = (e) => {
     e.preventDefault();
     if (!validate()) {
