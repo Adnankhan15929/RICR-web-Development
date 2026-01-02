@@ -7,7 +7,7 @@ import { HiCurrencyRupee } from "react-icons/hi2";
 const Header = () => {
   return (
     <>
-        <div className='bg-amber-800 px-4 py-2 text-center text-white flex justify-center items-center' id="header">
+        <div className='bg-tt text-white px-4 py-2 text-center text-dark flex justify-center items-center' id="header">
             <RiMoneyDollarCircleFill className='text-3xl font-bold animate-bounce' />
             <FaEuroSign  className='text-3xl font-bold animate-spin'/>
             <span className='text-3xl font-bold'>

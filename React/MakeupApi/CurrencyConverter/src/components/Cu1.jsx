@@ -94,6 +94,7 @@ const Cu1 = () => {
               <button className="text-2xl hover:scale-150 hover:duration-300 scale-100 duration-300 hover:text-amber-700" onClick={swap}>as</button>
             </div>
           </div>
+          
           <div className="flex gap-3 items-center">
             <label htmlFor="fromAmt">Amount</label>
             <input
