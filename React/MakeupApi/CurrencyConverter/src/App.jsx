@@ -7,8 +7,8 @@ const App = () => {
   return (
     <>
       <Header/>
-      {/* <Currency/> */}
-      <Cu1/>
+      <Currency/>
+      {/* <Cu1/> */}
     </>
   )
 }
