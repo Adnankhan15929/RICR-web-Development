@@ -7,7 +7,7 @@ const Header = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="bg-(--primary) px-4 py-2 flex justify-between items-center ">
+      <div className="bg-(--color-header-footer) px-4 py-2 flex justify-between items-center ">
         <Link to={"/"}>
           <img
             src={logo}
@@ -16,12 +16,12 @@ const Header = () => {
           />
         </Link>
         <div>
-          <Link to={"/"} className="text-decoration-none text-white hover:text-(--accent)">
+          <Link to={"/"} className="text-decoration-none text-(--color-text-inverse) hover:text-(--color-accent)">
             Home
           </Link>
         </div>
         <div>
-          <button className="bg-(--secondary) py-2 px-4 font-bold hover:bg-(--secondary-hover) hover:text-white rounded" onClick={()=> navigate("/register")}>Register</button>
+          <button className="bg-(--color-secondary) py-2 px-4 font-bold hover:bg-red-600 hover:text-white rounded" onClick={()=> navigate("/register")}>Register</button>
         </div>
       </div>
     </>

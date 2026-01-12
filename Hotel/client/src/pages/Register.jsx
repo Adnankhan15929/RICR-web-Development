@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+import ElectricBorder from '../pages/ElectricBorder';
 import api from "../config/Api";
 
 const Register = () => {
@@ -80,20 +81,30 @@ const Register = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-linear-to-br bg-(--secondary) py-6 px-4">
-        <div className="max-w-xl mx-auto">
+    
+      <div className="min-h-screen bg-linear-to-br bg-(--color-background) py-6 px-4">
+        <div className="max-w-xl mx-auto ">
           {/* Header */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-white mb-2">
+            <h1 className="text-4xl font-bold text-(--color-text-primary) mb-2">
               Registration
             </h1>
-            <p className="text-lg text-white">
+            <p className="text-lg text-(--color-text-primary)">
               You are 1 step away to stop your Cavings
             </p>
           </div>
 
-          {/* Form Container */}
-          <div className="bg-(--background) rounded-xl shadow-2xl overflow-hidden">
+          <ElectricBorder
+        color="#F4D35E"
+        speed={1}
+        chaos={0.2}
+        thickness={1}
+        style={{ borderRadius: 16 }}
+      >
+        <div className=""> 
+          <p style={{ margin: "6px 0 0", opacity: 0.8 }}>
+           {/* Form Container */}
+          <div className="bg-(--color-tertiary) rounded-xl shadow-2xl overflow-hidden">
             <form
               onSubmit={handleSubmit}
               onReset={handleClearForm}
@@ -110,7 +121,7 @@ const Register = () => {
                       value={formData.fullName}
                       onChange={handleChange}
                       required
-                      className="w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
+                      className="w-full h-fit px-4 py-3 border-b-2 border-gray-300  focus:outline-none focus:border-(--color-secondary-hover) transition"
                     />
                     {validationError.fullName && (
                       <span className="text-xs text-red-500">
@@ -162,7 +173,7 @@ const Register = () => {
               <div className="flex gap-4 pt-8 border-t-2 border-gray-200">
                 <button
                   type="submit"
-                  className="flex-1 bg-linear-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg"
+                  className="flex-1 bg-linear-to-r bg-(--color-secondary) text-black font-bold py-4 px-6 rounded-lg hover:from-green-700 hover:to-green-800 transition duration-300 transform hover:scale-105 shadow-lg hover:text-white"
                 >
                   Submit Registration
                 </button>
@@ -175,6 +186,10 @@ const Register = () => {
               </div>
             </form>
           </div>
+          </p>
+        </div>
+      </ElectricBorder>
+          
 
           {/* Footer Note */}
           <p className="text-center text-gray-600 mt-8 text-sm">
