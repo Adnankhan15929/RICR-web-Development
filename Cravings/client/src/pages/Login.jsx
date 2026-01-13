@@ -1,8 +1,10 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -67,9 +69,7 @@ const Login = () => {
         <div className="max-w-xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">
-              Login
-            </h1>
+            <h1 className="text-4xl font-bold text-gray-900 mb-2">Login</h1>
           </div>
 
           {/* Form Container */}
@@ -77,13 +77,11 @@ const Login = () => {
             <form
               onSubmit={handleSubmit}
               onReset={handleClearForm}
-              className="p-8"
+              className="p-8 pb-0"
             >
               {/* Personal Information */}
               <div className="mb-10">
                 <div className="space-y-4">
-                  
-
                   <input
                     type="email"
                     name="email"
@@ -94,7 +92,7 @@ const Login = () => {
                     required
                     className="w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
                   />
-    
+
                   <input
                     type="password"
                     name="password"
@@ -105,7 +103,6 @@ const Login = () => {
                     required
                     className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
                   />
-                  
                 </div>
               </div>
 
@@ -127,6 +124,15 @@ const Login = () => {
                 </button>
               </div>
             </form>
+            <div className="text-center text-sm py-2 m-0 flex justify-center">
+              <p>Don't have an account? </p>
+              <div
+                className="hover:text-amber-600 ps-1 text-blue-500"
+                onClick={() => navigate("/register")}
+              >
+                Register Now
+              </div>
+            </div>
           </div>
 
           {/* Footer Note */}
@@ -139,4 +145,4 @@ const Login = () => {
   );
 };
 
-export default Login
+export default Login;

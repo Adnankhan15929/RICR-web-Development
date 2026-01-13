@@ -16,7 +16,7 @@ const Header = () => {
           />
         </Link>
         <div>
-          <Link to={"/"} className="text-decoration-none text-(--color-text-inverse) hover:text-(--color-accent)">
+          <Link to={"/"} className="text-decoration-none text-(--color-text-inverse) hover:text-(--color-accent) text-xl">
             Home
           </Link>
         </div>

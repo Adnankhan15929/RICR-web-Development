@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -98,7 +100,7 @@ const Register = () => {
             <form
               onSubmit={handleSubmit}
               onReset={handleClearForm}
-              className="p-8"
+              className="p-8 pb-0"
             >
               {/* Personal Information */}
               <div className="mb-10">
@@ -180,6 +182,15 @@ const Register = () => {
                   {isLoading ? "Submitting" : "Submit"}
                 </button>
               </div>
+               <div className="text-center text-sm py-2 m-0 flex justify-center">
+              <p>Already have an account?</p>
+              <div
+                className="hover:text-amber-600 ps-1 text-blue-500"
+                onClick={() => navigate("/login")}
+              >
+                Login Now
+              </div>
+            </div>
             </form>
           </div>
 

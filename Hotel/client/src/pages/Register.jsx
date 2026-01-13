@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import ElectricBorder from '../pages/ElectricBorder';
 import api from "../config/Api";
 
 const Register = () => {
@@ -94,13 +93,7 @@ const Register = () => {
             </p>
           </div>
 
-          <ElectricBorder
-        color="#F4D35E"
-        speed={1}
-        chaos={0.2}
-        thickness={1}
-        style={{ borderRadius: 16 }}
-      >
+        
         <div className=""> 
           <p style={{ margin: "6px 0 0", opacity: 0.8 }}>
            {/* Form Container */}
@@ -121,7 +114,7 @@ const Register = () => {
                       value={formData.fullName}
                       onChange={handleChange}
                       required
-                      className="w-full h-fit px-4 py-3 border-b-2 border-gray-300  focus:outline-none focus:border-(--color-secondary-hover) transition"
+                      className="w-full h-fit px-4 py-3 border-2 bg-white border-gray-300 rounded-lg focus:outline-none focus:border-black focus:bg-(--color-secondary) transition"
                     />
                     {validationError.fullName && (
                       <span className="text-xs text-red-500">
@@ -136,7 +129,7 @@ const Register = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
+                    className="w-full h-fit px-4 py-3 border-2 bg-white border-gray-300 rounded-lg focus:outline-none focus:border-black focus:bg-(--color-secondary) transition"
                   />
                   <input
                     type="tel"
@@ -146,7 +139,7 @@ const Register = () => {
                     value={formData.mobileNumber}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
+                    className="w-full h-fit px-4 py-3 border-2 bg-white border-gray-300 rounded-lg focus:outline-none focus:border-black focus:bg-(--color-secondary) transition"
                   />
                   <input
                     type="password"
@@ -155,7 +148,7 @@ const Register = () => {
                     placeholder="Create Password"
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
+                    className="w-full h-fit px-4 py-3 border-2 bg-white border-gray-300 rounded-lg focus:outline-none focus:border-black focus:bg-(--color-secondary) transition"
                   />
                   <input
                     type="password"
@@ -164,7 +157,7 @@ const Register = () => {
                     value={formData.confirmPassword}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
+                    className="w-full h-fit px-4 py-3 border-2 bg-white border-gray-300 rounded-lg focus:outline-none focus:border-black focus:bg-(--color-secondary) transition"
                   />
                 </div>
               </div>
@@ -173,7 +166,7 @@ const Register = () => {
               <div className="flex gap-4 pt-8 border-t-2 border-gray-200">
                 <button
                   type="submit"
-                  className="flex-1 bg-linear-to-r bg-(--color-secondary) text-black font-bold py-4 px-6 rounded-lg hover:from-green-700 hover:to-green-800 transition duration-300 transform hover:scale-105 shadow-lg hover:text-white"
+                  className="flex-1 bg-linear-to-r bg-(--color-secondary) text-black font-bold py-4 px-6 rounded-lg hover:from-green-700 hover:bg-invert transition duration-300 transform hover:scale-105 shadow-lg hover:text-white"
                 >
                   Submit Registration
                 </button>
@@ -188,7 +181,6 @@ const Register = () => {
           </div>
           </p>
         </div>
-      </ElectricBorder>
           
 
           {/* Footer Note */}
