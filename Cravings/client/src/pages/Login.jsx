@@ -10,7 +10,6 @@ const Login = () => {
     password: "",
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [validationError, setValidationError] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,32 +23,12 @@ const Login = () => {
     });
   };
 
-  const validate = () => {
-    let Error = {};
-
-    if (
-      !/^[\w\.]+@(gmail|outlook|ricr|yahoo)\.(com|in|co.in)$/.test(
-        formData.email
-      )
-    ) {
-      Error.email = "Use Proper Email Format";
-    }
-
-    setValidationError(Error);
-
-    return Object.keys(Error).length > 0 ? false : true;
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
-    if (!validate()) {
-      setIsLoading(false);
-      toast.error("Fill the Form Correctly");
-      return;
-    }
     console.log(formData);
+
     try {
       const res = await api.post("/auth/login", formData);
       setIsLoading(true);

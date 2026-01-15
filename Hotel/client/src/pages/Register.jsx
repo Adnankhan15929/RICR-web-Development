@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -65,14 +67,15 @@ const Register = () => {
       toast.error("Fill the Form Correctly");
       return;
     }
-
+console.log(formData);
     try {
       const res = await api.post("/auth/register",formData)
+      setIsLoading(true);
       toast.success(res.data.message);
       handleClearForm();
     } catch (error) {
       console.log(error);
-      toast.error(error.message);
+      toast.error(error?.response?.data?.message || "Unknown Error");
     } finally {
       setIsLoading(false);
     }
@@ -101,7 +104,7 @@ const Register = () => {
             <form
               onSubmit={handleSubmit}
               onReset={handleClearForm}
-              className="p-8"
+              className="p-8 pb-0"
             >
               {/* Personal Information */}
               <div className="mb-10">
@@ -165,18 +168,28 @@ const Register = () => {
               {/* Submit Button */}
               <div className="flex gap-4 pt-8 border-t-2 border-gray-200">
                 <button
-                  type="submit"
-                  className="flex-1 bg-linear-to-r bg-(--color-secondary) text-black font-bold py-4 px-6 rounded-lg hover:from-green-700 hover:bg-invert transition duration-300 transform hover:scale-105 shadow-lg hover:text-white"
-                >
-                  Submit Registration
-                </button>
-                <button
                   type="reset"
                   className="flex-1 bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg hover:bg-gray-400 transition duration-300 transform hover:scale-105"
                 >
                   Clear Form
                 </button>
+                <button
+                  type="submit"
+                  className="flex-1 bg-linear-to-r bg-(--color-secondary) text-black font-bold py-4 px-6 rounded-lg hover:from-green-700 hover:bg-invert transition duration-300 transform hover:scale-105 shadow-lg hover:text-white"
+                >
+                  {isLoading ? "Submitting" : "Submit"}
+                </button>
+                
               </div>
+               <div className="text-center text-sm py-2 m-0 flex justify-center">
+              <p className="text-white ">Already have an account?</p>
+              <div
+                className="hover:text-blue-500 text-red-500 ps-1"
+                onClick={() => navigate("/login")}
+              >
+                Login Now
+              </div>
+            </div>
             </form>
           </div>
           </p>

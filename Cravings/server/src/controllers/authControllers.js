@@ -3,7 +3,8 @@ import bcrypt from "bcrypt";
 
 export const UserRegister = async (req, res, next) => {
   try {
-    console.log(req.body);
+    // console.log(req.body);
+
     //accept data from Frontend
     const { fullName, email, mobileNumber, password } = req.body;
 
@@ -14,23 +15,30 @@ export const UserRegister = async (req, res, next) => {
       return next(error);
     }
 
-    console.log({ fullName, email, mobileNumber, password });
+    // console.log({ fullName, email, mobileNumber, password });
 
     //Check for duplaicate user before registration
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       const error = new Error("Email already registered");
       error.statusCode = 409;
-      console.log(next(error));
+
+      // console.log(next(error));
+
       return next(error);
     }
 
-    console.log("sending data to db")
+
+    // console.log("sending data to db")
+
+
     //encrypt the password
     const salt = await bcrypt.genSalt(10);
     const hashPassword = await bcrypt.hash(password, salt);
 
-    console.log("password hashing done. Hashpassword = ",hashPassword);
+    
+    // console.log("password hashing done. Hashpassword = ",hashPassword);
+
 
     //save data to database
     const newUser = await User.create({
@@ -41,7 +49,9 @@ export const UserRegister = async (req, res, next) => {
     });
 
     // send response to Frontend
-    console.log(newUser);
+
+    // console.log(newUser);
+
     res.status(201).json({ message: "Registration Successfull" });
     //End
   } catch (error) {

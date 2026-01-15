@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
+import { useNavigate } from "react-router-dom";
 
-const Contact = () => {
+const Login = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    fullName: "",
     email: "",
-    mobileNumber: "",
-    message: "",
+    password: "",
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [validationError, setValidationError] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,20 +19,39 @@ const Contact = () => {
 
   const handleClearForm = () => {
     setFormData({
-      fullName: "",
       email: "",
-      mobileNumber: "",
-      message: "",
+      password: "",
     });
+  };
+
+  const validate = () => {
+    let Error = {};
+
+    if (
+      !/^[\w\.]+@(gmail|outlook|ricr|yahoo)\.(com|in|co.in)$/.test(
+        formData.email
+      )
+    ) {
+      Error.email = "Use Proper Email Format";
+    }
+
+    setValidationError(Error);
+
+    return Object.keys(Error).length > 0 ? false : true;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
+    if (!validate()) {
+      setIsLoading(false);
+      toast.error("Fill the Form Correctly");
+      return;
+    }
     console.log(formData);
     try {
-      const res = await api.post("/public/newContact", formData);
+      const res = await api.post("/auth/login", formData);
       setIsLoading(true);
       toast.success(res.data.message);
       handleClearForm();
@@ -45,36 +65,26 @@ const Contact = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 py-6 px-4">
+    
+      <div className="min-h-screen bg-linear-to-br bg-(--color-background) py-6 px-4 ">
         <div className="max-w-xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">
-              Post your Query
-            </h1>
+            <h1 className="text-4xl font-bold text-(--color-text-primary) mb-2">Login</h1>
           </div>
 
           {/* Form Container */}
-          <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
+          <div className=""> 
+          <p style={{ margin: "6px 0 0", opacity: 0.8 }}>
+          <div className="bg-(--color-tertiary) rounded-xl shadow-2xl overflow-hidden">
             <form
               onSubmit={handleSubmit}
               onReset={handleClearForm}
-              className="p-8"
+              className="p-8 pb-0"
             >
               {/* Personal Information */}
               <div className="mb-10">
                 <div className="space-y-4">
-                  <input
-                    type="text"
-                    name="fullName"
-                    placeholder="Full Name"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    disabled={isLoading}
-                    required
-                    className="w-full h-fit px-4 py-3 border-2  border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
-                  />
-
                   <input
                     type="email"
                     name="email"
@@ -83,27 +93,18 @@ const Contact = () => {
                     onChange={handleChange}
                     disabled={isLoading}
                     required
-                    className="w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
+                    className="w-full h-fit px-4 py-3 border-2 bg-white border-gray-300 rounded-lg focus:outline-none focus:border-black focus:bg-(--color-secondary) "
                   />
+
                   <input
-                    type="tel"
-                    name="mobileNumber"
-                    placeholder="Mobile Number"
-                    maxLength="10"
-                    value={formData.mobileNumber}
+                    type="password"
+                    name="password"
+                    value={formData.password}
+                    placeholder="Enter your Password"
                     onChange={handleChange}
                     disabled={isLoading}
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
-                  />
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    placeholder="Write your message"
-                    onChange={handleChange}
-                    disabled={isLoading}
-                    required
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
+                    className="w-full h-fit px-4 py-3 border-2 bg-white border-gray-300 rounded-lg focus:outline-none focus:border-black focus:bg-(--color-secondary) "
                   />
                 </div>
               </div>
@@ -120,13 +121,25 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="flex-1 bg-linear-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg disabled:cursor-not-allowed disabled:to-indigo-700 disabled:from-indigo-600 disabled:scale-100"
+                  className="flex-1 bg-linear-to-r bg-(--color-secondary) text-black font-bold py-4 px-6 rounded-lg hover:from-green-700 hover:bg-invert transition duration-300 transform hover:scale-105 shadow-lg hover:text-white"
                 >
-                  {isLoading ? "Submitting" : "Submit"}
+                  {isLoading ? "Submitting" : "Login"}
                 </button>
               </div>
             </form>
+            <div className="text-center text-sm py-2 m-0 flex justify-center">
+              <p className="text-white">Don't have an account? </p>
+              <div
+                className="hover:text-blue-500 text-red-500 ps-1"
+                onClick={() => navigate("/register")}
+              >
+                Register Now
+              </div>
+            </div>
           </div>
+         </p>
+        </div>
+          
 
           {/* Footer Note */}
           <p className="text-center text-gray-600 mt-8 text-sm">
@@ -138,4 +151,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Login;
