@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import UserSideBar from "../../components/userDashboard/UserSideBar";
+import {
+  UserSideBar,
+  UserSideBarLogo,
+} from "../../components/userDashboard/UserSideBar";
 import UserOverview from "../../components/userDashboard/UserOverview";
 import UserProfile from "../../components/userDashboard/UserProfile";
 import UserOrders from "../../components/userDashboard/UserOrders";
@@ -13,18 +16,33 @@ const UserDashboard = () => {
 
   return (
     <>
-      <div className="flex w-full h-[90vh]">
-        <div className="w-2/10 bg-(--color-background) ">
-          <UserSideBar active={active} setActive={setActive} />
-        </div>
-        <div className=" w-8/10">
-          {active === "overview" && <UserOverview />}
-          {active === "profile" && <UserProfile />}
-          {active === "orders" && <UserOrders />}
-          {active === "transactions" && <UserTransactions />}
-          {active === "helpdesk" && <UserHelpDesk />}
-        </div>
-      </div>
+        {SideBar ?
+          <div className="flex w-full h-[90vh]">
+            <div className="w-2/10 bg-(--color-background) ">
+              <UserSideBar active={active} setActive={setActive} SideBar={SideBar} setSideBar={setSideBar}/>
+            </div>
+            <div className=" w-8/10">
+              {active === "overview" && <UserOverview />}
+              {active === "profile" && <UserProfile />}
+              {active === "orders" && <UserOrders />}
+              {active === "transactions" && <UserTransactions />}
+              {active === "helpdesk" && <UserHelpDesk />}
+            </div>
+          </div>
+         : 
+          <div className="flex w-80 h-[90vh]">
+            <div className="w-2/10 bg-(--color-background) ">
+              <UserSideBarLogo active={active} setActive={setActive} SideBar={SideBar} setSideBar={setSideBar} />
+            </div>
+            <div className=" w-8/10">
+              {active === "overview" && <UserOverview />}
+              {active === "profile" && <UserProfile />}
+              {active === "orders" && <UserOrders />}
+              {active === "transactions" && <UserTransactions />}
+              {active === "helpdesk" && <UserHelpDesk />}
+            </div>
+          </div>
+        }
     </>
   );
 };
