@@ -3,7 +3,7 @@ import { TbChartTreemap } from "react-icons/tb";
 import { ImProfile } from "react-icons/im";
 import { TiShoppingCart } from "react-icons/ti";
 import { TbTransactionRupee } from "react-icons/tb";
-import { RiCustomerServicea2Fill } from "react-icons/ri";
+import { RiCustomerService2Fill } from "react-icons/ri";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const UserSideBar = ({ active, setActive, isCollapsed, setIsCollapsed }) => {
