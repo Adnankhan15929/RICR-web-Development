@@ -6,7 +6,7 @@ import { TbTransactionRupee } from "react-icons/tb";
 import { RiCustomerService2Fill } from "react-icons/ri";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-const UserSideBar = ({ active, setActive, isCollapsed, setIsCollapsed }) => {
+const UserSideBar = ({ active, setActive, isCollapsed, setIsCollapsed }) => { //props
   const menuItems = [
     { key: "overview", title: "OverView", icon: <TbChartTreemap /> },
     { key: "profile", title: "Profile", icon: <ImProfile /> },

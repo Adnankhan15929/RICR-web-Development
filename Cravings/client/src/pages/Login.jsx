@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext.jsx";
 
 const Login = () => {
+  const { setUser, setIsLogin } = useAuth();
+
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
@@ -33,6 +36,9 @@ const Login = () => {
       const res = await api.post("/auth/login", formData);
       setIsLoading(true);
       toast.success(res.data.message);
+      setUser(res.data.data);
+      setIsLogin(true);
+      sessionStorage.setItem("CravingUser", JSON.stringify(res.data.data));
       handleClearForm();
       navigate("/user-dashboard");
     } catch (error) {

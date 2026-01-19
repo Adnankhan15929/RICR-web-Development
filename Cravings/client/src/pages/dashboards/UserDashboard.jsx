@@ -17,7 +17,7 @@ const UserDashboard = () => {
           className={`bg-(--color-background) duration-500 ${isCollapsed ? "w-2/60" : "w-12/60"}`}
         >
           <UserSideBar
-            active={active}
+            active={active}       //props handling
             setActive={setActive}
             isCollapsed={isCollapsed}
             setIsCollapsed={setIsCollapsed}

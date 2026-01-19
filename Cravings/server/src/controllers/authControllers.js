@@ -1,5 +1,6 @@
 import User from "../models/userModel.js";
 import bcrypt from "bcrypt";
+import { genToken } from "../utils/authToken.js";
 
 export const UserRegister = async (req, res, next) => {
   try {
@@ -28,17 +29,13 @@ export const UserRegister = async (req, res, next) => {
       return next(error);
     }
 
-
     // console.log("sending data to db")
-
 
     //encrypt the password
     const salt = await bcrypt.genSalt(10);
     const hashPassword = await bcrypt.hash(password, salt);
 
-    
     // console.log("password hashing done. Hashpassword = ",hashPassword);
-
 
     //save data to database
     const newUser = await User.create({
@@ -86,6 +83,9 @@ export const UserLogin = async (req, res, next) => {
       error.statusCode = 401;
       return next(error);
     }
+
+    //Token generation will be done here
+    genToken(existingUser,res);
 
     //send message to Frontend
     res.status(200).json({ message: "Login Successfull", data: existingUser });
