@@ -122,4 +122,79 @@ body{
 {
     font-size: 13px;
     color: blue;
+} 
+
+/* html, body{
+    height: 100%;
+    width: 100%;
 }
+
+
+.nav{
+    height: 100px;
+    width: 92vw;
+    background-color: yellow;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3vw;
+    
+}
+.nav2{
+   display: flex;
+   gap: 3vw;
+   align-items: center;
+}
+.nav h4{
+    font-size: 1vw;
+}
+.nav2 i{
+    font-weight: 800;
+    display: none;
+    
+
+}
+
+#content{
+    height: calc(100vh - 100px);
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+ 
+.in1{
+    height: 100%;
+    width: 50%;
+    background-color: chartreuse;
+    padding: 5vw 3vw;
+}
+.in1 h1{
+    font-size: 4vw;
+    line-height: 4.4vw;
+}
+.in2{
+    height: 100%;
+    width: 50%;
+    background-color: blue;
+}
+@media (max-width:821px) 
+{
+    .nav{
+        width: 90vmin;
+        background-color: lightseagreen;
+        color: blueviolet;
+        padding : 0 5vw;
+        height: 60px;
+    }
+    .nav2 h2{
+        font-size: 6vw;
+    }
+    .nav h4{
+        font-size: 4vw;
+        display: none;
+    }
+    .nav i{
+        font: 6vw;
+        display: block;
+    }
+} */
