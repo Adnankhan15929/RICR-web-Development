@@ -7,6 +7,29 @@ const Header = () => {
   const { user, isLogin } = useAuth();
   const navigate = useNavigate();
 
+  const handleNavigate = () =>{
+    switch (role) {
+        case "manager":{
+          navigate("/restaurant-dashboard");
+          break;
+        }
+        case "partner":{
+          navigate("/rider-dashboard");
+          break;
+        }
+        case "customer":{
+          navigate("/customer-dashboard");
+          break;
+        }
+        case "admin":{
+          navigate("/admin-dashboard");
+          break;
+        }
+        default:
+          break;
+      }
+  }
+
   return (
     <>
       <div className="bg-(--color-primary) px-4 py-2 flex justify-between items-center w-full z-99">

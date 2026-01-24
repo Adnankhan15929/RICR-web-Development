@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
 
 const Login = () => {
-  const { setUser, setIsLogin } = useAuth();
+  const { setUser, setIsLogin,  setRole } = useAuth();
 
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -40,6 +40,30 @@ const Login = () => {
       setIsLogin(true);
       sessionStorage.setItem("CravingUser", JSON.stringify(res.data.data));
       handleClearForm();
+      switch (res.data.data.role) {
+        case "manager":{
+          setRole("manager");
+          navigate("/restaurant-dashboard");
+          break;
+        }
+        case "partner":{
+          setRole("partner");
+          navigate("/rider-dashboard");
+          break;
+        }
+        case "customer":{
+          setRole("customer");
+          navigate("/customer-dashboard");
+          break;
+        }
+        case "admin":{
+          setRole("admin");
+          navigate("/admin-dashboard");
+          break;
+        }
+        default:
+          break;
+      }
       navigate("/user-dashboard");
     } catch (error) {
       console.log(error);

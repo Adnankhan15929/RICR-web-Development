@@ -42,12 +42,13 @@ export const UserRegister = async (req, res, next) => {
       fullName,
       email,
       mobileNumber,
-      password: hashPassword,
+      password: hashPassword, 
+      role,
     });
 
     // send response to Frontend
 
-    // console.log(newUser);
+    console.log(newUser);
 
     res.status(201).json({ message: "Registration Successfull" });
     //End
