@@ -4,21 +4,21 @@ import { genToken } from "../utils/authToken.js";
 
 export const UserRegister = async (req, res, next) => {
   try {
-    // console.log(req.body);
+    console.log(req.body);
 
     //accept data from Frontend
-    const { fullName, email, mobileNumber, password } = req.body;
+    const { fullName, email, mobileNumber, password, role } = req.body;
 
     //verify that all data exist
-    if (!fullName || !email || !mobileNumber || !password) {
-      const error = new Error("All feilds required");
+    if (!fullName || !email || !mobileNumber || !password || !role) {
+      const error = new Error("All fields required");
       error.statusCode = 400;
       return next(error);
     }
 
-    // console.log({ fullName, email, mobileNumber, password });
+    console.log({ fullName, email, mobileNumber, password });
 
-    //Check for duplaicate user before registration
+    //Check for duplicate user before registration
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       const error = new Error("Email already registered");
@@ -29,13 +29,13 @@ export const UserRegister = async (req, res, next) => {
       return next(error);
     }
 
-    // console.log("sending data to db")
+    console.log("sending data to db")
 
     //encrypt the password
     const salt = await bcrypt.genSalt(10);
     const hashPassword = await bcrypt.hash(password, salt);
 
-    // console.log("password hashing done. Hashpassword = ",hashPassword);
+    console.log("password hashing done. Hash password = ",hashPassword);
 
     //save data to database
     const newUser = await User.create({
@@ -50,7 +50,7 @@ export const UserRegister = async (req, res, next) => {
 
     console.log(newUser);
 
-    res.status(201).json({ message: "Registration Successfull" });
+    res.status(201).json({ message: "Registration Success full" });
     //End
   } catch (error) {
     next(error);
@@ -64,12 +64,12 @@ export const UserLogin = async (req, res, next) => {
 
     //verify that all data exist
     if (!email || !password) {
-      const error = new Error("All feilds required");
+      const error = new Error("All fields required");
       error.statusCode = 400;
       return next(error);
     }
 
-    //Check if user is registred or not
+    //Check if user is registered or not
     const existingUser = await User.findOne({ email });
     if (!existingUser) {
       const error = new Error("Email not registered");
@@ -89,7 +89,7 @@ export const UserLogin = async (req, res, next) => {
     genToken(existingUser,res);
 
     //send message to Frontend
-    res.status(200).json({ message: "Login Successfull", data: existingUser });
+    res.status(200).json({ message: "Login Success full", data: existingUser });
     //End
   } catch (error) {
     next(error);
@@ -98,7 +98,7 @@ export const UserLogin = async (req, res, next) => {
 
 export const UserLogout = async (req, res, next) => {
   try {
-    res.status(200).json({ message: "Logout Successfull" });
+    res.status(200).json({ message: "Logout Success full" });
   } catch (error) {
     next(error);
   }

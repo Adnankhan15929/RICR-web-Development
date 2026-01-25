@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
 
 const Header = () => {
-  const { user, isLogin } = useAuth();
+  const { user, isLogin, role } = useAuth();
   const navigate = useNavigate();
 
   const handleNavigate = () =>{
@@ -64,9 +64,7 @@ const Header = () => {
           {isLogin ? (
             <div
               className="text-amber-600 cursor-pointer font-bold"
-              onClick={() => {
-                navigate("/user-dashboard");
-              }}
+              onClick={handleNavigate}
             >
               {user.fullName}
             </div>

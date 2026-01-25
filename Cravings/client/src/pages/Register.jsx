@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
-import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -18,6 +16,7 @@ const Register = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+   
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -76,8 +75,7 @@ const Register = () => {
     console.log(formData);
     try {
       const res = await api.post("/auth/register", formData);
-      setIsLoading(true);
-      toast.success(res.data.message);
+            toast.success(res.data.message);
       handleClearForm();
     } catch (error) {
       console.log(error);
@@ -106,72 +104,79 @@ const Register = () => {
             <form
               onSubmit={handleSubmit}
               onReset={handleClearForm}
-              className="p-8 pb-0"
+              className="p-8"
             >
               {/* Personal Information */}
               <div className="mb-10">
                 <div className="space-y-4">
-                  
-                  <div className="flex justify-between items-center">
-                    <label >I am</label>
-                    <div className="flex items-center gap-2">
-                      <input
-                        type="radio"
-                        name="role"
-                        id="manager"
-                        checked={formData.role === "manager"}
-                        value={"manager"}
-                        onChange={handleChange}
-                      />
-                      <label htmlFor="manager">Restaurant Manager</label>
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <label >I am</label>
+                      <div className="flex items-center gap-2">
+                        <input
+                          type="radio"
+                          name="role"
+                          id="manager"
+                          checked={formData.role === "manager"}
+                          value={"manager"}
+                          onChange={handleChange}
+                        />
+                        <label htmlFor="manager">Restaurant Manager</label>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <input
+                          type="radio"
+                          name="role"
+                          id="partner"
+                          checked={formData.role === "partner"}
+                          value={"partner"}
+                          onChange={handleChange}
+                        />
+                        <label htmlFor="partner">Delivery Partner</label>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <input
+                          type="radio"
+                          name="role"
+                          id="customer"
+                          checked={formData.role === "customer"}
+                          value={"customer"}
+                          onChange={handleChange}
+                        />
+                        <label htmlFor="customer">Customer</label>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <input
-                        type="radio"
-                        name="role"
-                        id="partner"
-                        checked={formData.role === "partner"}
-                        value={"partner"}
-                        onChange={handleChange}
-                      />
-                      <label htmlFor="partner">Delivery Partner</label>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <input
-                        type="radio"
-                        name="role"
-                        id="customer"
-                        checked={formData.role === "customer"}
-                        value={"customer"}
-                        onChange={handleChange}
-                      />
-                      <label htmlFor="customer">Customer</label>
-                    </div>
+                     {validationError.role && (
+                      <span className="text-xs text-red-500">
+                        {validationError.role}
+                      </span>
+                    )}
                   </div>
-                  <input
-                    type="text"
-                    name="fullName"
-                    placeholder="Full Name"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    disabled={isLoading}
-                    required
-                    className="w-full h-fit px-4 py-3 border-2  border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
-                  />
-                  {validationError.fullName && (
-                    <span className="text-xs text-red-500">
-                      {validationError.fullName}
-                    </span>
-                  )}
-
+                  <div>
+                    <input
+                      type="text"
+                      name="fullName"
+                      placeholder="Full Name"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      required
+                      disabled={isLoading}
+                      className="w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
+                    />
+                    {validationError.fullName && (
+                      <span className="text-xs text-red-500">
+                        {validationError.fullName}
+                      </span>
+                    )}
+                  </div>
                   <input
                     type="email"
                     name="email"
                     placeholder="Email Address"
                     value={formData.email}
                     onChange={handleChange}
-                    disabled={isLoading}
                     required
+                    disabled={isLoading}
                     className="w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
                   />
                   <input
@@ -181,8 +186,8 @@ const Register = () => {
                     maxLength="10"
                     value={formData.mobileNumber}
                     onChange={handleChange}
-                    disabled={isLoading}
                     required
+                    disabled={isLoading}
                     className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
                   />
                   <input
@@ -191,8 +196,8 @@ const Register = () => {
                     value={formData.password}
                     placeholder="Create Password"
                     onChange={handleChange}
-                    disabled={isLoading}
                     required
+                    disabled={isLoading}
                     className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
                   />
                   <input
@@ -201,8 +206,8 @@ const Register = () => {
                     placeholder="Confirm Password"
                     value={formData.confirmPassword}
                     onChange={handleChange}
-                    disabled={isLoading}
                     required
+                    disabled={isLoading}
                     className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
                   />
                 </div>
@@ -212,27 +217,18 @@ const Register = () => {
               <div className="flex gap-4 pt-8 border-t-2 border-gray-200">
                 <button
                   type="reset"
-                  className="flex-1 bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg hover:bg-gray-400 transition duration-300 transform hover:scale-105 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:scale-100"
                   disabled={isLoading}
+                  className="flex-1 bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg hover:bg-gray-400 transition duration-300 transform hover:scale-105 disabled:scale-100 disabled:bg-gray-300 disabled:cursor-not-allowed"
                 >
                   Clear Form
                 </button>
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="flex-1 bg-linear-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg disabled:cursor-not-allowed disabled:to-indigo-700 disabled:from-indigo-600 disabled:scale-100"
+                  className="flex-1 bg-linear-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg disabled:scale-100 disabled:bg-gray-300  disabled:cursor-not-allowed"
                 >
                   {isLoading ? "Submitting" : "Submit"}
                 </button>
-              </div>
-              <div className="text-center text-sm py-2 m-0 flex justify-center">
-                <p>Already have an account?</p>
-                <div
-                  className="hover:text-amber-600 ps-1 text-blue-500"
-                  onClick={() => navigate("/login")}
-                >
-                  Login Now
-                </div>
               </div>
             </form>
           </div>
