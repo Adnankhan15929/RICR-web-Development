@@ -37,10 +37,15 @@ export const UserRegister = async (req, res, next) => {
 
     console.log("password hashing done. Hash password = ",hashPassword);
 
+    const photoURL = `https://placehold.co/600x400?text=${fullName.charAt(0).toUpperCase()}`;
+    const photo = {
+      url: photoURL,
+    }
+
     //save data to database
     const newUser = await User.create({
       fullName,
-      email,
+      email:email.toLowerCase(),
       mobileNumber,
       password: hashPassword, 
       role,
@@ -98,6 +103,7 @@ export const UserLogin = async (req, res, next) => {
 
 export const UserLogout = async (req, res, next) => {
   try {
+    res.clearCookie("parleG");
     res.status(200).json({ message: "Logout Success full" });
   } catch (error) {
     next(error);

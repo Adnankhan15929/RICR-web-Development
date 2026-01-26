@@ -5,15 +5,39 @@ import { TiShoppingCart } from "react-icons/ti";
 import { TbTransactionRupee } from "react-icons/tb";
 import { RiCustomerService2Fill } from "react-icons/ri";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { MdLogout } from "react-icons/md";
+import api from "../../config/Api";
+import toast from "react-hot-toast";
+import { useAuth } from "../../context/AuthContext.jsx";
 
-const UserSideBar = ({ active, setActive, isCollapsed, setIsCollapsed }) => { //props
+const UserSideBar = ({ active, setActive, isCollapsed, setIsCollapsed }) => {
+  //props
+
+  const { setUser, setIsLogin } = useAuth();
+
   const menuItems = [
     { key: "overview", title: "OverView", icon: <TbChartTreemap /> },
     { key: "profile", title: "Profile", icon: <ImProfile /> },
     { key: "orders", title: "Orders", icon: <TiShoppingCart /> },
-    { key: "transactions", title: "Transactions",icon: <TbTransactionRupee />},
+    {
+      key: "transactions",
+      title: "Transactions",
+      icon: <TbTransactionRupee />,
+    },
     { key: "helpdesk", title: "Help Desk", icon: <RiCustomerService2Fill /> },
   ];
+
+  const handleLogout = async () => {
+    try {
+      const res = await api.post("/auth/logout");
+      toast.success(res.data.message);
+      setUser("");
+      setIsLogin(false);
+      sessionStorage.removeItem("CravingUser");
+    } catch (error) {
+      toast.error(error?.response?.data?.message || "Unknown Error");
+    }
+  };
 
   return (
     <>
@@ -49,6 +73,16 @@ const UserSideBar = ({ active, setActive, isCollapsed, setIsCollapsed }) => { //
               {!isCollapsed && item.title}
             </button>
           ))}
+        </div>
+        <div>
+          <button
+            className="flex gap-3 items-center text-lg ps-2 rounded-xl h-10 w-full text-nowrap overflow-hidden duration-300 hover:bg-red-500 hover:text-white text-red-600"
+            onClick={handleLogout}
+          >
+            {" "}
+            <MdLogout />
+            {!isCollapsed && "Logout"}
+          </button>
         </div>
       </div>
     </>

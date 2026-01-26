@@ -196,7 +196,7 @@ const Register = () => {
                     value={formData.password}
                     placeholder="Create Password"
                     onChange={handleChange}
-                    required
+                    required1
                     disabled={isLoading}
                     className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
                   />
