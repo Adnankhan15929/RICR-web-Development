@@ -1,5 +1,3 @@
-import dotenv from "dotenv";
-dotenv.config();
 import express from "express";
 import cors from "cors";
 import connectDB from "./src/config/db.js";
@@ -8,6 +6,7 @@ import cookieParser from "cookie-parser";
 import morgan from "morgan";
 import PublicRouter from "./src/routers/publicRouter.js";
 import UserRouter from "./src/routers/userRouter.js";
+import cloudinary from './src/config/cloudinary.js'
 
 const app = express();
 
@@ -33,9 +32,17 @@ app.use((err, req, res, next) => {
   
   res.status(StatusCode).json({ message: ErrorMessage });
 });
-
 const port = process.env.PORT || 5000;
-app.listen(port, () => {
+app.listen(port, async () => {
   console.log("Server Started at Port: ", port);
   connectDB();
+  try {
+    const res = await cloudinary.api.ping();
+    console.log("Cloudinary API is Working:",res);
+    
+
+  } catch (error) 
+  {
+    console.error("Error Connecting Cloudinary API :",error);
+  }
 });

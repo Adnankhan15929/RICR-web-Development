@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import EditProfileModal from "./modals/EditProfileModal";
 import UserImage from "../../assets/userImage.jpg";
@@ -7,23 +7,24 @@ import api from "../../config/Api";
 import toast from "react-hot-toast";
 
 const UserProfile = () => {
-  const {user} = useAuth();
+  const {user, setUser} = useAuth();
   const [isEditProfileModalOpen, setIsEditProfileModalOpen] = useState(false);
-  const { preview, setPreview } = useState("");
-  const [photo, setPhoto] = useState("");
+  const [preview, setPreview] = useState("");
 
-  const changePhoto = async () => {
+  const changePhoto = async (photo) => {
     const form_Data = new FormData();
     form_Data.append("image", photo);
     form_Data.append("imageURL", preview);
 
     try {
-      const res = await api.put("/users/changePhoto", form_Data);
+      const res = await api.patch("/user/changePhoto", form_Data);
 
       toast.success(res.data.message);
+      setUser(res.data.data)
+      sessionStorage.setItem("Craving")
     } catch (error) {
       toast.error(error?.response?.data?.message || "Unknown Error");
-    } 
+    }
   };
 
   const handlePhotoChange = (e) => {
@@ -45,7 +46,7 @@ const UserProfile = () => {
             <div className="relative">
               <div className=" border rounded-full w-36 h-36 overflow-hidden">
                 <img
-                  src={preview || user.photo.url || UserImage}
+                  src={preview || user.photo.url || UserImage} 
                   alt=""
                   className="w-full h-full object-cover"
                 />
@@ -68,13 +69,13 @@ const UserProfile = () => {
             </div>
             <div>
               <div className="text-3xl text-(--color-primary) font-bold">
-                {user.fullName}
+                {user.fullName || "User Name "}
               </div>
               <div className="text-gray-600 text-lg font-semibold">
-                {user.email}
+                {user.email || "user@example.com"}
               </div>
               <div className="text-gray-600 text-lg font-semibold">
-                {user.mobileNumber}
+                {user.mobileNumber || "XXXXXXXXXX"}
               </div>
             </div>
           </div>
