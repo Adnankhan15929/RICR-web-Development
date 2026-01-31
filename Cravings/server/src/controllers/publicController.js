@@ -5,7 +5,7 @@ export const NewContact = async (req, res, next) => {
     const { fullName, email, mobileNumber, message } = req.body;
 
     if (!fullName || !email || !mobileNumber || !message) {
-      const error = new Error("All feilds required");
+      const error = new Error("All fields required");
       error.statusCode = 400;
       return next(error);
     }
@@ -19,8 +19,12 @@ export const NewContact = async (req, res, next) => {
 
     console.log(newContact);
 
-    res.status(201).json({message:"Thanks for Contacting us. We will Get Back to you in 24-48 Hours",});
-
+    res
+      .status(201)
+      .json({
+        message:
+          "Thanks for Contacting us. We will Get Back to you in 24-48 Hours",
+      });
   } catch (error) {
     next(error);
   }

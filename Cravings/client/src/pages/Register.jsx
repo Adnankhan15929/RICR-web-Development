@@ -55,7 +55,7 @@ const Register = () => {
     }
 
     if (!formData.role) {
-      Error.role = "Please choose anyone";
+      Error.role = "Please choose any one";
     }
 
     setValidationError(Error);
@@ -72,10 +72,14 @@ const Register = () => {
       toast.error("Fill the Form Correctly");
       return;
     }
+
     console.log(formData);
+
+    
+
     try {
       const res = await api.post("/auth/register", formData);
-            toast.success(res.data.message);
+      toast.success(res.data.message);
       handleClearForm();
     } catch (error) {
       console.log(error);
@@ -111,7 +115,7 @@ const Register = () => {
                 <div className="space-y-4">
                   <div>
                     <div className="flex items-center justify-between">
-                      <label >I am</label>
+                      <label>I am </label>
                       <div className="flex items-center gap-2">
                         <input
                           type="radio"
@@ -121,7 +125,7 @@ const Register = () => {
                           value={"manager"}
                           onChange={handleChange}
                         />
-                        <label htmlFor="manager">Restaurant Manager</label>
+                        <label htmlFor="manager">Resturant Manager</label>
                       </div>
                       <div className="flex items-center gap-2">
                         <input
@@ -196,7 +200,7 @@ const Register = () => {
                     value={formData.password}
                     placeholder="Create Password"
                     onChange={handleChange}
-                    required1
+                    required
                     disabled={isLoading}
                     className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
                   />

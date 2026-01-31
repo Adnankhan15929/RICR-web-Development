@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext.jsx";
+import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
-  const { setUser, setIsLogin,  setRole } = useAuth();
+  const { setUser, setIsLogin, setRole } = useAuth();
 
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -31,40 +32,38 @@ const Login = () => {
     setIsLoading(true);
 
     console.log(formData);
-
     try {
       const res = await api.post("/auth/login", formData);
-      setIsLoading(true);
       toast.success(res.data.message);
       setUser(res.data.data);
       setIsLogin(true);
       sessionStorage.setItem("CravingUser", JSON.stringify(res.data.data));
       handleClearForm();
       switch (res.data.data.role) {
-        case "manager":{
+        case "manager": {
           setRole("manager");
-          navigate("/restaurant-dashboard");
+          navigate("/resturant-dashboard");
           break;
         }
-        case "partner":{
+        case "partner": {
           setRole("partner");
           navigate("/rider-dashboard");
           break;
         }
-        case "customer":{
+        case "customer": {
           setRole("customer");
-          navigate("/customer-dashboard");
+          navigate("/user-dashboard");
           break;
         }
-        case "admin":{
+        case "admin": {
           setRole("admin");
           navigate("/admin-dashboard");
           break;
         }
+
         default:
           break;
       }
-      navigate("/user-dashboard");
     } catch (error) {
       console.log(error);
       toast.error(error?.response?.data?.message || "Unknown Error");
@@ -79,7 +78,12 @@ const Login = () => {
         <div className="max-w-xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">Login</h1>
+            <h1 className="text-4xl font-bold text-gray-900 mb-2">
+              Welcome Back
+            </h1>
+            {/* <p className="text-lg text-gray-600">
+              You are 1 step away to stop your Cravings
+            </p> */}
           </div>
 
           {/* Form Container */}
@@ -87,10 +91,10 @@ const Login = () => {
             <form
               onSubmit={handleSubmit}
               onReset={handleClearForm}
-              className="p-8 pb-0"
+              className="p-8"
             >
               {/* Personal Information */}
-              <div className="mb-10">
+              <div className="mb-5">
                 <div className="space-y-4">
                   <input
                     type="email"
@@ -98,8 +102,8 @@ const Login = () => {
                     placeholder="Email Address"
                     value={formData.email}
                     onChange={handleChange}
-                    disabled={isLoading}
                     required
+                    disabled={isLoading}
                     className="w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
                   />
 
@@ -107,12 +111,15 @@ const Login = () => {
                     type="password"
                     name="password"
                     value={formData.password}
-                    placeholder="Enter your Password"
+                    placeholder="Create Password"
                     onChange={handleChange}
-                    disabled={isLoading}
                     required
+                    disabled={isLoading}
                     className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
                   />
+                </div>
+                <div className="flex justify-end mt-2">
+                  <button className="text-(--color-primary) hover:color-(--color-secondary) cursor-pointer" onClick={(e)=>{e.preventDefault(); setIsForgetPasswordIsOpen(true)}}>Forget Password?</button>
                 </div>
               </div>
 
@@ -120,29 +127,20 @@ const Login = () => {
               <div className="flex gap-4 pt-8 border-t-2 border-gray-200">
                 <button
                   type="reset"
-                  className="flex-1 bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg hover:bg-gray-400 transition duration-300 transform hover:scale-105 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:scale-100"
                   disabled={isLoading}
+                  className="flex-1 bg-gray-300 text-gray-800 font-bold py-4 px-6 rounded-lg hover:bg-gray-400 transition duration-300 transform hover:scale-105 disabled:scale-100 disabled:bg-gray-300 disabled:cursor-not-allowed"
                 >
                   Clear Form
                 </button>
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="flex-1 bg-linear-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg disabled:cursor-not-allowed disabled:to-indigo-700 disabled:from-indigo-600 disabled:scale-100"
+                  className="flex-1 bg-linear-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg disabled:scale-100 disabled:bg-gray-300  disabled:cursor-not-allowed"
                 >
-                  {isLoading ? "Submitting" : "Login"}
+                  {isLoading ? "loading.." : "Login"}
                 </button>
               </div>
             </form>
-            <div className="text-center text-sm py-2 m-0 flex justify-center">
-              <p>Don't have an account? </p>
-              <div
-                className="hover:text-amber-600 ps-1 text-blue-500"
-                onClick={() => navigate("/register")}
-              >
-                Register Now
-              </div>
-            </div>
           </div>
 
           {/* Footer Note */}
@@ -151,6 +149,9 @@ const Login = () => {
           </p>
         </div>
       </div>
+      {
+        isForgetPasswordModelOpen 
+      }
     </>
   );
 };

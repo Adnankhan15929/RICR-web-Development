@@ -1,5 +1,5 @@
 import express from "express"
-import {UserUpdate, UserChangePhoto} from "../controllers/userControllers.js"
+import {UserUpdate, UserChangePhoto, UserResetPassword,} from "../controllers/userControllers.js"
 import { Protect } from '../middlewares/authMiddleware.js';
 import multer from "multer";
 
@@ -9,6 +9,6 @@ const Uploads = multer(); //multer kisi bhi type ke data ko padh leta h sirf jso
 
 router.put("/update", Protect, UserUpdate);
 router.patch("/changePhoto", Protect, Uploads.single("image"), UserChangePhoto);
-
+router.patch("/resetPassword", Protect, UserResetPassword);
 
 export default router;

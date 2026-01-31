@@ -1,46 +1,46 @@
 import React from "react";
 import transparentLogo from "../assets/transparentLogo.png";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext.jsx";
+import { useAuth } from "../context/AuthContext";
 
 const Header = () => {
   const { user, isLogin, role } = useAuth();
   const navigate = useNavigate();
 
-  const handleNavigate = () =>{
+  const handleNavigate = () => {
     switch (role) {
-        case "manager":{
-          navigate("/restaurant-dashboard");
-          break;
-        }
-        case "partner":{
-          navigate("/rider-dashboard");
-          break;
-        }
-        case "customer":{
-          navigate("/customer-dashboard");
-          break;
-        }
-        case "admin":{
-          navigate("/admin-dashboard");
-          break;
-        }
-        default:
-          break;
+      case "manager": {
+        navigate("/resturant-dashboard");
+        break;
       }
-  }
+      case "partner": {
+        navigate("/rider-dashboard");
+        break;
+      }
+      case "customer": {
+        navigate("/user-dashboard");
+        break;
+      }
+      case "admin": {
+        navigate("/admin-dashboard");
+        break;
+      }
+      default:
+        break;
+    }
+  };
 
   return (
     <>
-      <div className="bg-(--color-primary) px-4 py-2 flex justify-between items-center w-full z-99">
+      <div className="bg-(--color-primary) px-4 py-2 flex justify-between items-center">
         <Link to={"/"}>
           <img
             src={transparentLogo}
             alt=""
-            className="h-12 w-20 object-cover invert-100 animate-bounce"
+            className="h-12 w-20 object-cover invert-100"
           />
         </Link>
-        <div className="flex gap-4 ps-27">
+        <div className="flex gap-4">
           <Link
             to={"/"}
             className="text-decoration-none text-white hover:text-(--color-accent)"
@@ -60,19 +60,19 @@ const Header = () => {
             Contact
           </Link>
         </div>
-        <div className="flex ">
+        <div className="flex gap-4">
           {isLogin ? (
             <div
-              className="text-amber-600 cursor-pointer font-bold"
+              className="text-red-500 cursor-pointer"
               onClick={handleNavigate}
             >
               {user.fullName}
             </div>
           ) : (
-            <div>
+            <>
               <button
                 onClick={() => navigate("/login")}
-                className="bg-(--color-secondary) py-2 px-4 me-4 font-bold hover:bg-(--color-secondary-hover) hover:text-white rounded"
+                className="bg-(--color-secondary) py-2 px-4 font-bold hover:bg-(--color-secondary-hover) hover:text-white rounded "
               >
                 Login
               </button>
@@ -82,7 +82,7 @@ const Header = () => {
               >
                 Register
               </button>
-            </div>
+            </>
           )}
         </div>
       </div>
