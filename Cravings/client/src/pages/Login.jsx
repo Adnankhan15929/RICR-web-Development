@@ -3,16 +3,20 @@ import toast from "react-hot-toast";
 import api from "../config/Api";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import ForgetPasswordModel from "../components/publicModals/ForgetPasswordModal"
 
 const Login = () => {
   const { setUser, setIsLogin, setRole } = useAuth();
 
   const navigate = useNavigate();
 
+  const [isForgetPasswordModelOpen, setIsForgetPasswordIsOpen] = useState(false);
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -150,7 +154,7 @@ const Login = () => {
         </div>
       </div>
       {
-        isForgetPasswordModelOpen 
+        isForgetPasswordModelOpen && (<ForgetPasswordModel onClose={()=>setIsForgetPasswordIsOpen(false)}/>)
       }
     </>
   );

@@ -359,6 +359,7 @@ const EditProfileModal = ({ onClose }) => {
               </div>
             </div>
 
+
             {/* Documents Section */}
             <div>
               <h3 className="text-lg font-semibold text-gray-700 mb-4 pb-2 border-b border-gray-200">
