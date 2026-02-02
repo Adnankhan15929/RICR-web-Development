@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { BsArrowClockwise } from "react-icons/bs";
-import api from "../../config/Api.jsx";
+import api from "../../config/Api";
 import toast from "react-hot-toast";
 
 const ForgetPasswordModal = ({ onClose }) => {
@@ -19,6 +19,13 @@ const ForgetPasswordModal = ({ onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
+    if (formData.newPassword !== formData.cfNewPassword) {
+      toast.error("New Password and Confirm Password Must be Same");
+      setLoading(false);
+      return;
+    }
+
     try {
       console.log(formData);
       let res;
