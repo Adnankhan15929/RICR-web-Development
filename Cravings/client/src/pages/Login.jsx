@@ -3,20 +3,21 @@ import toast from "react-hot-toast";
 import api from "../config/Api";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import ForgetPasswordModel from "../components/publicModals/ForgetPasswordModal"
+import ForgetPasswordModal from "../components/publicModals/ForgetPasswordModal";
+import Loading from "../components/Loading";
 
 const Login = () => {
   const { setUser, setIsLogin, setRole } = useAuth();
 
   const navigate = useNavigate();
 
-  const [isForgetPasswordModelOpen, setIsForgetPasswordIsOpen] = useState(false);
+  const [isForgetPasswordModelOpen, setIsForgetPasswordModelOpen] =
+    useState(false);
 
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
-  
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -76,6 +77,14 @@ const Login = () => {
     }
   };
 
+  if (isLoading) {
+    return (
+      <div className="w-100 h-100 flex items-center justify-center">
+        <Loading />
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 py-6 px-4">
@@ -86,7 +95,7 @@ const Login = () => {
               Welcome Back
             </h1>
             {/* <p className="text-lg text-gray-600">
-              You are 1 step away to stop your Cravings
+              You are 1 step away to stop your Cavings
             </p> */}
           </div>
 
@@ -115,15 +124,23 @@ const Login = () => {
                     type="password"
                     name="password"
                     value={formData.password}
-                    placeholder="Create Password"
+                    placeholder="Password"
                     onChange={handleChange}
                     required
                     disabled={isLoading}
                     className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition disabled:cursor-not-allowed disabled:bg-gray-200"
                   />
                 </div>
-                <div className="flex justify-end mt-2">
-                  <button className="text-(--color-primary) hover:color-(--color-secondary) cursor-pointer" onClick={(e)=>{e.preventDefault(); setIsForgetPasswordIsOpen(true)}}>Forget Password?</button>
+                <div className="w-full flex justify-end">
+                  <button
+                    className="text-(--color-primary) hover:text-(--color-secondary) cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsForgetPasswordModelOpen(true);
+                    }}
+                  >
+                    Forget Password?
+                  </button>
                 </div>
               </div>
 
@@ -153,9 +170,12 @@ const Login = () => {
           </p>
         </div>
       </div>
-      {
-        isForgetPasswordModelOpen && (<ForgetPasswordModel onClose={()=>setIsForgetPasswordIsOpen(false)}/>)
-      }
+
+      {isForgetPasswordModelOpen && (
+        <ForgetPasswordModal
+          onClose={() => setIsForgetPasswordModelOpen(false)}
+        />
+      )}
     </>
   );
 };
