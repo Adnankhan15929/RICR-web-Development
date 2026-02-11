@@ -1,5 +1,5 @@
 import React from "react";
-import transparentLogo from "../assets/transparentLogo.png";
+import tranparentLogo from "../assets/transparentLogo.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
@@ -35,7 +35,7 @@ const Header = () => {
       <div className="bg-(--color-primary) px-4 py-2 flex justify-between items-center">
         <Link to={"/"}>
           <img
-            src={transparentLogo}
+            src={tranparentLogo}
             alt=""
             className="h-12 w-20 object-cover invert-100"
           />
@@ -58,6 +58,12 @@ const Header = () => {
             className="text-decoration-none text-white hover:text-(--color-accent)"
           >
             Contact
+          </Link>
+          <Link
+            to={"/orderNowCopy"}
+            className="text-decoration-none text-white hover:text-(--color-accent)"
+          >
+            Order Now
           </Link>
         </div>
         <div className="flex gap-4">
