@@ -24,11 +24,11 @@ const OrderNow = () => {
     fetchAllRestaurant();
   }, []);
 
-  const handleResturantClick = (Entirerestaurant) => {
+  const handleResturantClick = (restaurantID) => {
     console.log("restaurant Clicked");
-    console.log("OrderNow Page", Entirerestaurant);
+    console.log("OrderNow Page", restaurantID);
 
-    navigate("/restaurantMenuCopy", {state:Entirerestaurant});
+    navigate(`/restaurant/${restaurantID}`);
   };
   console.log(restaurants);
 
@@ -49,7 +49,7 @@ const OrderNow = () => {
                 key={idx}
                 className="rounded h-100 hover:shadow-lg p-3"
                 onClick={() => {
-                  handleResturantClick(restaurant);
+                  handleResturantClick(restaurant._id);
                 }}
               >
                 <div>{restaurant.restaurantName}</div>
