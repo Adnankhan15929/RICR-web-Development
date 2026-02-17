@@ -35,7 +35,7 @@ h1{
     white-space: nowrap;
 } */
 
-#page1{
+/* #page1{
     height: 100%;
     width: 100%;
     background-color: rgb(12, 215, 255);
@@ -79,4 +79,40 @@ h2{
     font-size: 60px;
     position: relative;
     background-color: rgb(142, 100, 100);
+} */
+
+
+
+
+/* 
+#page1{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(55, 0, 0);
+}
+#page2{
+    height: 100%;
+    width: 100%;
+    background-color: burlywood;
+}
+#page2 h1{
+    color: black;
+    font-size: 40vw; */
+    /* padding: 40px 0; */
+/* }
+#page3{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(55, 0, 0);
+} */
+
+
+#string{
+    background-color: red;
+    height: 200px;
+    width: 100%;
+}
+
+svg{
+    background-color: blue;
 }
