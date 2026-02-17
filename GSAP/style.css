@@ -13,9 +13,70 @@ html,body{
 body{
     background-color: #111;
 }
+/* 
+#nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 50px;
+}
+
+#p2{
+    display: flex;
+    gap:50px;
+}
+
+h1{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    font-size: 50px;
+    white-space: nowrap;
+} */
+
+#page1{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(12, 215, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#page2{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(12, 124, 210);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:50px;
+}
+#page3{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(4, 58, 232);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 #box{
+    background-color: red;
     height: 300px;
     width: 300px;
-    background-color: yellow;
+}
+
+
+h1{
+    font-size: 60px;
+    position: relative;
+    background-color: red;
+    padding: 10px;
+}
+h2{
+    font-size: 60px;
+    position: relative;
+    background-color: rgb(142, 100, 100);
 }
