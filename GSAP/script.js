@@ -34,7 +34,6 @@
 //     scale:0.5,
 // })
 
-
 // gsap.from("#page1 #box",{
 //     scale:0,
 //     delay:1,
@@ -92,9 +91,6 @@
 //     }
 // })
 
-
-
-
 // gsap.to("#page2 h1",{
 //     Transform:"translateX(-150%)",
 //     scrollTrigger:{
@@ -109,16 +105,26 @@
 //     }
 // })
 
+var path = `M 10 100 Q 500 100 990 100`;
 
+var finalPath = `M 10 100 Q 500 100 990 100`;
 
+var string = document.querySelector("#string");
 
+string.addEventListener("mousemove", function (dets) {
+  path = `M 10 100 Q ${dets.x} ${dets.y} 990 100`;
 
-var path = `M 10 100 Q 250 100 490 100`
+  gsap.to("svg path", {
+    attr: { d: path },
+    duration: 0.3,
+    ease: "power3.out",
+  });
+});
 
-var finalPath = `M 10 100 Q 250 100 490 100`
-
-var string = document.querySelector("#string")
-
-string.addEventListener("mouseenter",function(dets){
-    path = `M 10 100 Q 250 100 490 100`
-})
+string.addEventListener("mouseleave", function () {
+  gsap.to("svg path", {
+    attr: { d: finalPath },
+    duration: 1.5,
+    ease: "elastic.out(1,0.2)",
+  });
+});
