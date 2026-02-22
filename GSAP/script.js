@@ -105,26 +105,68 @@
 //     }
 // })
 
-var path = `M 10 100 Q 500 100 990 100`;
+// var path = `M 10 100 Q 500 100 990 100`;
 
-var finalPath = `M 10 100 Q 500 100 990 100`;
+// var finalPath = `M 10 100 Q 500 100 990 100`;
 
-var string = document.querySelector("#string");
+// var string = document.querySelector("#string");
 
-string.addEventListener("mousemove", function (dets) {
-  path = `M 10 100 Q ${dets.x} ${dets.y} 990 100`;
+// string.addEventListener("mousemove", function (dets) {
+//   path = `M 10 100 Q ${dets.x} ${dets.y} 990 100`;
 
-  gsap.to("svg path", {
-    attr: { d: path },
-    duration: 0.3,
-    ease: "power3.out",
-  });
-});
+//   gsap.to("svg path", {
+//     attr: { d: path },
+//     duration: 0.3,
+//     ease: "power3.out",
+//   });
+// });
 
-string.addEventListener("mouseleave", function () {
-  gsap.to("svg path", {
-    attr: { d: finalPath },
-    duration: 1.5,
-    ease: "elastic.out(1,0.2)",
-  });
-});
+// string.addEventListener("mouseleave", function () {
+//   gsap.to("svg path", {
+//     attr: { d: finalPath },
+//     duration: 1.5,
+//     ease: "elastic.out(1,0.2)",
+//   });
+// });
+
+
+
+// var main = document.querySelector("#main");
+// var cursor = document.querySelector("#cursor");
+
+// main.addEventListener("mousemove",function(dets){
+//   gsap.to(cursor,{
+//     x:dets.x,
+//     y:dets.y,
+//     duration:1,
+//     ease:"back.out"
+//   })
+// })
+
+
+
+var main = document.querySelector("#main");
+var cursor = document.querySelector("#cursor");
+var imageDiv = document.querySelector("#image")
+
+main.addEventListener("mousemove",function(dets){
+  gsap.to(cursor,{
+    x:dets.x,
+    y:dets.y,
+    duration:0.6,
+  })
+})
+imageDiv.addEventListener("mouseenter",function(){
+  cursor.innerHTML= "View More"
+  gsap.to(cursor,{
+    scale:4,
+    backgroundColor:"#ffffff8a"
+  })
+})
+imageDiv.addEventListener("mouseleave",function(){
+  cursor.innerHTML= ""
+  gsap.to(cursor,{
+    scale:1,
+    backgroundColor:"white"
+  })
+})
