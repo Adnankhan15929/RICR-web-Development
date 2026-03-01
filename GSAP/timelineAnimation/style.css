@@ -1,0 +1,136 @@
+@font-face {
+  font-family: china;
+  src: url(./neuemachina-regular.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  /* color: white; */
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+section {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px 70px;
+}
+nav .part2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+nav h1 {
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav h1 i {
+  rotate: 45deg;
+  display: inline-block;
+  font-size: 45px;
+}
+nav h4 {
+  font-size: 15px;
+  font-weight: 500;
+}
+nav button {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 15px 30px;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.center {
+  height: 85%;
+  width: 100%;
+  display: flex;
+
+  padding: 30px 70px;
+}
+.center-part1 {
+  height: 100%;
+  width: 40%;
+  h1 {
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 1.2;
+    font-family: china;
+  }
+  p {
+    margin-top: 40px;
+    margin-bottom: 25px;
+    font-size: 17px;
+    width: 95%;
+  }
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    background-color: black;
+    color: white;
+  }
+}
+.center-part2 {
+  height: 100%;
+  width: 60%;
+  position: relative;
+  img {
+    height: 100%;
+    right: 0;
+    position: absolute;
+  }
+}
+
+.section1bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 70px;
+  img {
+    height: 45px;
+  }
+}
+
+.section2 {
+  
+  .services {
+    display: flex;
+    padding: 160px 90px;
+    gap: 60px;
+    align-items: center;
+    justify-content:flex-start;
+  }
+  h3 {
+    font-size: 35px;
+    font-weight: 500;
+    border-radius: 5px;
+    font-family: china;
+    background-color: #B9FF66;
+    padding: 7px 5px 3px 5px;
+  }
+  p {
+    font-size: 15px;
+    font-weight: 100;
+    width: 40%;
+  }
+}
