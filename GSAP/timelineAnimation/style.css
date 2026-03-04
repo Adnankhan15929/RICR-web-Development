@@ -110,16 +110,16 @@ nav button {
     height: fit-content;
   }
 }
-
-.section2 {
-  
-  .services {
+.services {
     display: flex;
     padding: 20px 90px 60px 78px;
     gap: 60px;
     align-items: center;
     justify-content:flex-start;
   }
+.section2 {
+  
+  
   h3 {
     font-size: 30px;
     font-weight: 500;
@@ -135,7 +135,8 @@ nav button {
   }
 }
 .container{
-  height:85%;
+  /* margin-top: 50px; */
+  min-height:86vh;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -152,7 +153,10 @@ nav button {
     padding: 33px 40px;
     box-shadow: 0px 8px 0px black;
     display: flex;
-    .elem-part1{
+   
+  }
+
+ .elem-part1{
       height: 100%;
       width: 65%;
       display: flex;
@@ -191,9 +195,6 @@ nav button {
       height: 100%;
       width: 100%;
     }
-  }
-
-
   .black{
     background-color: black;
     .elem-part1 h2{
