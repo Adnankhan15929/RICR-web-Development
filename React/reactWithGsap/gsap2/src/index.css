@@ -1,0 +1,77 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: gilroy;
+  color: white;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+}
+main{
+  height: 100vh;
+  width: 100%;
+  background-color: black; 
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+/* .container{
+  padding: 20px;
+  border: 3px solid white;
+  border-radius: 30px;
+}
+.box{
+  height: 300px;
+  width: 300px;
+  margin: 20px;
+  background: linear-gradient(to right bottom,rgb(215, 122, 140),crimson);
+  border-radius: 10px;
+} */
+/* .circle{
+  margin: 20px;
+  height: 300px;
+  width: 300px;
+  background: linear-gradient(to right bottom, lightblue,cadetblue);
+  border-radius: 50%;
+}
+
+button{
+  padding: 30px 100px;
+  border-radius: 50px;
+  background:linear-gradient(rgb(49, 235, 226), rgb(131, 239, 131));
+  border: none;
+  color: black;
+  font-size: 25px ;
+  font-weight: 600;
+}
+
+button:active{
+  scale:0.963;
+} */
+
+/* img{
+  height: 200px;
+} */
+
+.box{
+  height: 300px;
+  width: 300px;
+  margin: 20px;
+  background: linear-gradient(to right bottom,rgb(215, 122, 140),crimson);
+  border-radius: 10px;
+}
+
+
+button{
+  padding: 30px 100px;
+  border-radius: 50px;
+  background:linear-gradient(rgb(49, 235, 226), rgb(131, 239, 131));
+  border: none;
+  color: black;
+  font-size: 25px ;
+  font-weight: 600;
+}
