@@ -19,3 +19,7 @@ div {
 li {
   display: inline; /*Li (list items) have their display property set to “list-item” by default which makes them a bulleted list item.*/
 }
+
+/* li{
+  display: none;
+} */
