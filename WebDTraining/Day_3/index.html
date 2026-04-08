@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <form action="script.html" method="get">
+      <fieldset  width="100%" >
+        <legend style="border: 30;">Employee Registration form</legend>
+        <table align="center"  cellpadding="10">
+          <tr>
+            <td colspan="">
+              <label for="gender"> </label
+              ><input type="radio" name="gender" />Mr.
+              <input type="radio" name="gender" />Mrs.
+              <input type="radio" name="gender" />Ms.
+            </td>
+          </tr>
+          <tr>
+            <td><label for="fn">First name:</label></td>
+            <td><input type="text" name="fn" placeholder="First name" /></td>
+          </tr>
+          <tr>
+            <td><label for="ln">Last name:</label></td>
+            <td><input type="text" name="ln" placeholder="Last name" /></td>
+          </tr>
+          <tr>
+            <td><label for="date">Date of Joining:</label></td>
+            <td><input type="date" name="date" /></td>
+          </tr>
+          <tr>
+            <td><label for="mail1">Main Address 1 :</label></td>
+            <td><input type="email" name="mail1" /></td>
+          </tr>
+          <tr>
+            <td><label for="mail2">Main Address 2 :</label></td>
+            <td><input type="email" name="mail2" /></td>
+          </tr>
+          <tr>
+            <td><label for="city">City</label></td>
+            <td><input type="text" name="city" /></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="state">State</label>
+            </td>
+            <td>
+              <select name="state" id="">
+                <option value="">---Select State---</option>
+                <option value="MP">Madhya Pradesh</option>
+                <option value="CH">Chattisgarh</option>
+                <option value="UP">Uttar Pradesh</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="zip">Zip</label></td>
+            <td><input type="number" /></td>
+          </tr>
+          <tr>
+            <td><label for="photo">Upload Photo</label></td>
+            <td><input type="file" /></td>
+          </tr>
+          <tr>
+            <td><label for="email">Email</label></td>
+            <td><input type="email" name="email" /></td>
+          </tr>
+          <tr>
+            <td><label for="Mn">Mobile</label></td>
+            <td><input type="number" placeholder="+91" /></td>
+          </tr>
+          <tr>
+            <td><label for="lang">Language Known:</label></td>
+            <td>
+              <input type="checkbox" />Hindi <br /><input
+                type="checkbox"
+              />English <br /><input type="checkbox" />Gujrati
+            </td>
+          </tr>
+          <tr>
+            <td><label for="AI">Additional Information:</label></td>
+            <td>
+              <textarea
+                name="AI"
+                id=""
+                placeholder="Optional"
+                rows="5"
+                cols="50"
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td><button>Submit</button></td>
+            <td><button>Reset</button></td>
+          </tr>
+        </table>
+      </fieldset>
+    </form> -->
+
+    <!--     
+    <form action="script.html" method="get">
+        <table cellpadding="10" style="text-transform: uppercase;">
+          <tr>
+            <td><label for="fn">First name</label></td>
+            <td style="display: flex;"><input type="text" name="fn" placeholder="First name" />
+            <p style="text-transform: lowercase;">(max 30 characters a-z and A-Z)</p></td>
+          </tr>
+          <tr>
+            <td><label for="ln">Last name</label></td>
+            <td style="display: flex;"><input type="text" name="ln" placeholder="Last name" />
+            <p style="text-transform: lowercase;">(max 30 characters a-z and A-Z)</p></td>
+          </tr>
+          <tr>
+            <td><label for="date">Date of birth</label></td>
+            <td>
+              <select name="day" id="">
+                <option value="">Day</option>
+                <option value="mon">Monday</option>
+                <option value="tue">Tuesday</option>
+                <option value="wed">Wednesday</option>
+                <option value="thur">Thursday</option>
+                <option value="fri">Friday</option>
+                <option value="sat">Saturday</option>
+                <option value="sun">Sunday</option>
+              </select>
+              <select>
+                <option value="">Month</option>
+                <option value="jan">January</option>
+                <option value="feb">Feburary</option>
+                <option value="mar">March</option>
+                <option value="apr">April</option>
+                <option value="may">May</option>
+                <option value="jun">June</option>
+                <option value="july">July</option>
+                <option value="aug">August</option>
+                <option value="sep">September</option>
+                <option value="oct">Octuber</option>
+                <option value="nov">November</option>
+                <option value="dec">December</option>
+              </select>
+              <input type="number" placeholder="Year">
+            </td>
+          </tr>
+          <tr>
+            <td><label for="email">Email</label></td>
+            <td><input type="email" name="email" /></td>
+          </tr>
+          <tr>
+            <td><label for="Mn">Mobile</label></td>
+            <td style="display: flex;"><input type="number" placeholder="+91" />
+            <p style="text-transform: lowercase;">(10 digit number)</p></td>
+          </tr>
+          <tr>
+            <td><label for="gender">gender </label
+              ></td>
+            <td colspan="">
+              <input type="radio" name="gender" />Male
+              <input type="radio" name="gender" />Female
+            </td>
+          </tr>
+          <tr>
+            <td><label for="AI">Address</label></td>
+            <td>
+              <textarea
+                name="AI"
+                id=""
+                rows="5"
+                cols="50"
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="city">City</label></td>
+            <td><input type="text" name="city" /></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="state">State</label>
+            </td>
+            <td>
+              <select name="state" id="">
+                <option value="">---Select State---</option>
+                <option value="MP">Madhya Pradesh</option>
+                <option value="CH">Chattisgarh</option>
+                <option value="UP">Uttar Pradesh</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="zip">Zip</label></td>
+            <td><input type="number" /></td>
+          </tr>
+          <tr>
+            <td><label for="photo">Upload Photo</label></td>
+            <td><input type="file" /></td>
+          </tr>
+          
+         
+          <tr>
+            <td><label for="lang">Language Known:</label></td>
+            <td>
+              <input type="checkbox" />Hindi <br /><input
+                type="checkbox"
+              />English <br /><input type="checkbox" />Gujrati
+            </td>
+          </tr>
+          
+          <tr>
+            <td><button>Submit</button></td>
+            <td><button>Reset</button></td>
+          </tr>
+        </table>
+    </form>-->
+
+
+
+
+
+
+    <div style="background-color: red; height: 250px; width: 100%;">
+        <div style="background-color: rgb(78, 12, 169); height: 250px; width: 250px; display: inline-block;">
+          <div style="background-color: green; height: 200px; width: 250px; display: flex;"></div>
+        </div>
+        <div style="background-color: yellow; height: 250px; width: 250px; display: inline-block;">
+          <div style="background-color: rgb(226, 170, 50); height: 200px; width: 250px; "></div>
+        </div>
+        <div style="background-color: violet; height: 250px; width: 250px; display: inline-block;">
+          <div style="background-color: rgb(71, 49, 49); height: 200px; width: 250px;"></div>
+        </div>
+    </div>
+  </body>
+</html>
