@@ -1,0 +1,24 @@
+body{
+    background-image: url(hotelroom.jpg.jpeg);
+}
+#main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18%;
+    height: 100%;
+            width: 100%;
+}
+
+div{
+    font-size: larger;
+    table{
+        background-color: white;
+        
+    }
+}
+table:hover{
+            padding: 50px 0px 50px 0px;
+            width: 30%;
+            
+}
