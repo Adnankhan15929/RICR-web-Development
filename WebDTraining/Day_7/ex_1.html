@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            height: 250px;
+            width: 250px;
+            background-color: brown;
+            padding: 5px;
+            margin: 5px;
+            box-shadow: 5px 5px 5px rgb(156, 123, 134);
+            border: 2px solid black;
+            font-size: xx-large;
+            text-shadow: 5px 5px 5px red;
+            animation: colorchange 5s 3s infinite;
+            position: relative;
+            border-radius: 50%;
+        }
+        @keyframes colorchange
+        {
+            0%
+            {
+                background-color: blueviolet;
+                box-shadow: 5px 5px 5px blue;
+                left: 0px;
+                top: 0px;
+                text-shadow: 15px 15px 5px rgba(81, 215, 252, 0.146);
+                font-size:100px;
+            }
+             25%
+            {
+                background-color: pink;
+                box-shadow: 5px 5px 5px aqua;
+                 left: 300px;
+                top: 0px;
+                text-shadow: -15px -15px 2px rgb(163, 255, 4);
+                font-size: 50px;
+            }
+             50%
+            {
+                background-color: goldenrod;
+                box-shadow: 5px 5px 5px silver;
+                left: 300px;
+                top: 300px;
+                text-shadow: 15px 15px 2px rgb(156, 9, 255);
+                font-size:100px;
+            }
+             75%
+            {
+                background-color: darkcyan;
+                box-shadow: 5px 5px 5px darkmagenta;
+                left: 0px;
+                top: 300px;
+                text-shadow: -15px -15px 2px rgb(0, 4, 255);
+                font-size: 50px;
+            }
+             100%
+            {
+                background-color: crimson;
+                box-shadow: 5px 5px 5px aquamarine;
+                left: 0px;
+                top: 0px;
+                text-shadow: 15px 15px 2px rgb(30, 210, 66);
+                font-size:100px;
+                
+            }
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <p>CSS</p>
+
+    </div>
+    <!-- <p id="main">Adnan khan</p> -->
+</body>
+</html>
