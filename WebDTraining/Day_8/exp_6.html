@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      margin: 100px 0px;
+      gap: 40px;
+    }
+    button {
+      padding: 25px 25px;
+      font-size: larger;
+      background-color: blue;
+      color: white;
+      border: 1px solid red;
+      box-shadow: 5px 5px 5px green;
+    }
+    button:hover {
+      background-color: green;
+      transition-duration: 2s;
+      border-radius: 30px;
+      transform: scale(1.5);
+    }
+  </style>
+  <body id="b">
+    <div>
+      <button onclick="add()">Addition</button>
+      <button onclick="sub()">Subtraction</button>
+      <button onclick="mul()">Multiplication</button>
+      <button onclick="div()">Division</button>
+      <button onclick="check()">Check a vowel</button>
+    </div>
+
+    <div>
+      <button onclick="bgcol('red')">RED</button
+      ><button onclick="bgcol('blue')">BLUE</button
+      ><button onclick="bgcol('green')">GREEN</button
+      ><button onclick="bgcol('khaki')">KHAKI</button
+      ><button onclick="bgcol('orange')">ORANGE</button
+      ><button onclick="bgcol('yellow')">YELLOW</button
+      ><button onclick="bgcol('pink')">PINK</button
+      ><button onclick="bgcol('hotpink')">HOTPINK</button
+      ><button onclick="bgcol('purple')">PURPLE</button
+      ><button onclick="bgcol('maroon')">MAROON</button>
+    </div>
+    <script>
+      function add() {
+        let x = prompt("Enter the value of x");
+        let y = prompt("Enter the value of y");
+        alert(parseInt(x) + parseInt(y));
+      }
+      function sub() {
+        let x = prompt("Enter the value of x");
+        let y = prompt("Enter the value of y");
+        alert(parseInt(x) - parseInt(y));
+      }
+      function mul() {
+        let x = prompt("Enter the value of x");
+        let y = prompt("Enter the value of y");
+        alert(parseInt(x) * parseInt(y));
+      }
+      function div() {
+        let x = prompt("Enter the value of x");
+        let y = prompt("Enter the value of y");
+        alert(parseInt(x) / parseInt(y));
+      }
+      function check() {
+        let v = prompt("Enter the value");
+        if (
+          v == "a" ||
+          v == "e" ||
+          v == "i" ||
+          v == "o" ||
+          v == "u" ||
+          v == "A" ||
+          v == "E" ||
+          v == "I" ||
+          v == "O" ||
+          v == "U"
+        ) {
+          alert("This is a vowel");
+        } else {
+          alert("This is a consonant");
+        }
+      }
+
+      function bgcol(col) {
+        document.getElementById("b").style.backgroundColor = col;
+      }
+    </script>
+  </body>
+</html>

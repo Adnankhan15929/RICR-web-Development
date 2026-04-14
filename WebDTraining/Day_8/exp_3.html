@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="i">
+        <a href="#" id="i1" onclick="fun(1)">1</a>
+        <a href="#" id="i2" onclick="fun(2)">2</a>
+        <a href="#" id="i3" onclick="fun(3)">3</a>
+    </div>
+
+    <script>
+        function fun(choise){
+            switch(choise){
+            case 1:
+                document.getElementById('i1').innerHTML="<img src='https://tse1.mm.bing.net/th/id/OIP.qELugBKhj33KWFcNR7_A-AHaDD?pid=Api&P=0&h=180'>";
+                break;
+            case 2:
+                document.getElementById('i2').innerHTML="<img src='https://sp.yimg.com/ib/th/id/OIP.NqiuLiTqfeklLEU8XTxCawHaEs?pid=Api&w=148&h=148&c=7&dpr=2&rs=1'>";
+                break;
+            case 3:
+                document.getElementById('i3').innerHTML="<img src='https://tse1.mm.bing.net/th/id/OIP.6sKI_kgp49bX8AtYFuVoeAHaEK?pid=Api&P=0&h=180'>";
+                break;
+            default:
+                break;
+
+        }
+        }
+    </script>
+</body>
+</html>
