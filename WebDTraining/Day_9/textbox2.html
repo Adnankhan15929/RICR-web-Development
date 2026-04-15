@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      font-size: xx-large;
+      text-align: center;
+      input {
+        font-size: x-large;
+        border-color: palevioletred;
+      }
+      button{
+        padding:15px 20px;
+        border-radius: 20px;
+        color: green;
+        border:2px solid green;
+        font-size: large;
+      }
+      button:hover{
+        transform:  scale(1.1);
+        transition-duration: 0.5s;
+        font-size: x-large;
+        color: blue;
+        border: 1px solid blue; 
+      }
+      div {
+        background-color: lightgreen;
+        padding: 20px 10px;
+        border: 2px solid green;
+        border-radius: 20px;
+      }
+      #s {
+        background-color: greenyellow;
+        border: 2px solid green;
+        padding: 30px;
+      }
+    }
+  </style>
+  <body>
+    <h1 >Voter or Not</h1>
+    <fieldset>
+      <legend>Vote</legend>
+      <div>
+        <label for="n1">Enter your Age:</label>
+        <input type="number" id="n1" />
+      </div>
+      <br />
+      <div id="s">
+        <button onclick="se(),playSound()">Click me..!</button>
+        <audio
+          id="sound"
+          src="freesound_community-funny-yay-6273.mp3"
+        ></audio>
+      </div>
+    </fieldset>
+    <script>
+      function playSound() {
+        let audio = document.getElementById("sound");
+        audio.play();
+      }
+      function se() {
+        x = parseInt(document.getElementById("n1").value);
+        if(x>=18){
+            alert("You're eligible for voting");
+        }
+        else{
+            alert("You're not eligible for voting");
+
+        }
+      }
+    </script>
+  </body>
+</html>

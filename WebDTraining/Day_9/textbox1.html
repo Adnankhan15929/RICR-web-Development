@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      font-size: xx-large;
+      input {
+        font-size: x-large;
+        border-color: palevioletred;
+      }
+      div {
+        background-color: lightgreen;
+        text-align: center;
+        padding: 20px 10px;
+        border: 2px solid green;
+        border-radius: 20px;
+      }
+      #s {
+        background-color: greenyellow;
+        border: 2px solid green;
+        padding: 30px;
+        select {
+          font-size: x-large;
+        }
+      }
+    }
+  </style>
+  <body>
+    <fieldset>
+      <legend>Switch</legend>
+      <div>
+        <label for="n1">First Number:</label>
+        <input type="number" id="n1" />
+        <label for="n2">Second Number:</label>
+        <input type="number" id="n2" />
+        <label for="result">Result:</label>
+        <input type="number" id="result" />
+      </div>
+      <br />
+      <div id="s">
+        <select name="button" id="btn" onchange="(sum(value), playSound())">
+          <option value="">--SELECT--</option>
+          <option value="add">ADDITION</option>
+          <option value="sub">SUBTRACTION</option>
+          <option value="mul">MULTIPLICATION</option>
+          <option value="div">DIVISION</option></select
+        ><audio
+          id="sound"
+          src="tudun-tadau_BJviW12.mp3"
+        ></audio>
+
+        <span id="side"></span>
+      </div>
+    </fieldset>
+    <script>
+      function playSound() {
+        let audio = document.getElementById("sound");
+        audio.play();
+      }
+      function sum(add) {
+        x = parseInt(document.getElementById("n1").value);
+        y = parseInt(document.getElementById("n2").value);
+        switch (add) {
+          case "add":
+            document.getElementById("result").value = x + y;
+            document.getElementById("side").innerHTML = "You pressed OK!";
+            alert("You calculate addition");
+            playSound();
+            break;
+          case "sub":
+            document.getElementById("result").value = x - y;
+            alert("You calculate subtraction");
+            break;
+          case "mul":
+            document.getElementById("result").value = x * y;
+            alert("You calculate multiplication");
+            break;
+          case "div":
+            document.getElementById("result").value = x / y;
+            alert("You calculate Division");
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
