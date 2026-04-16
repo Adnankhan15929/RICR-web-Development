@@ -1,6 +1,5 @@
 function login(){
     console.log("Login Button Clicked");
-
     const em= document.getElementById("loginEmail").value;
     const ps= document.getElementById("loginConfirmPassword").value;
     console.log("Email : ",em);

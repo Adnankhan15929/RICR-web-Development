@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="p1">SISTec GN</h1>
+    <h1 class="p1">SISTec RB</h1>
+    <h1 class="p2">LNCT</h1>
+    <h1 class="p2">VIT</h1>
+    <h1 class="p2">BANSAL</h1>
+    <button onclick="counth()">Count h1 tag using class name</button>
+    <script>
+        function counth(){
+            var a = prompt("emter a class name")
+            var t=document.getElementsByClassName(a);
+            alert("Total number of heading="+t.length);
+        }
+
+    </script>
+</body>
+</html>
