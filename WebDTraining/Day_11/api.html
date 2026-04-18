@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="mydata()">GetData</button>
+    <table style="border: 2px solid red;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Emailid</th>
+            </tr>
+        </thead>
+        <tbody id="data">
+        </tbody>
+    </table>
+    <script>
+        async function mydata() //await ka use krne ke liye asnyc lagana pdega function me
+        {
+            let response=await fetch('https://jsonplaceholder.typicode.com/users')   //await mtlb jb tk ek data nhi ata tb tk dusre data pr nhi jana
+            // console.log(response); response ne tukdo me data store kia
+            let result=await response.json(); //hmne data ko json format ek meaning full format me convert kr dia 
+            console.log(result);
+            
+            for(let i=0; i<result.length; i++){
+                document.getElementById("data").innerHTML+=`<tr><td>${result[i].id}</td>
+                    <td>${result[i].name}</td>
+                    <td>${result[i].username}</td>
+                    <td>${result[i].email}</td></tr>`;
+            }
+        }
+    </script>
+</body>
+
+</html>

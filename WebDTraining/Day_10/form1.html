@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to right, rgb(91, 200, 18), rgb(237, 242, 242), rgb(188, 152, 43));
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: black;
+            color: white;
+            font-family: cursive;
+            display: flex;
+            justify-content: center;
+            padding: 10px 30px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        h3 {
+            color: white;
+        }
+
+        #div1 {
+            background-color: rgb(71, 225, 19);
+            height: 250px;
+            width: 550px;
+            margin: auto;
+            padding: 9px;
+            border-radius: 10px;
+            box-shadow: -20px 20px 20px black;
+            border: 2px solid white;
+        }
+
+        .inp1 {
+            width: 200px;
+            border: 2px solid white;
+            background-color: pink;
+        }
+
+        marquee {
+            margin-top: 120px;
+            color: white;
+            font-size: 50px;
+            font-family: "Brush Script MT";
+            text-shadow: 5px, 5px, 5px black;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>Welcome to SISTec, Gandhinagar</header>
+
+    <br><br><br><br><br><br><br><br><br><br>
+
+    <div align="center" id="div1">
+        <h3 style="font-family:Arial, sans-serif ;">Login Panel</h3>
+        <form action="" method="post" onsubmit="return check()">
+            <h4 id="error" style="color: rgb(240, 176, 176); text-shadow: 2px 2px 2px rgba(221, 14, 14, 0.849);"></h4>
+            <br>
+            <div style="color: white; font-size: medium; font-family: Arial, sans-serif;">
+                Username:&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;<input class="inp1" type="text" name="name" id="name">
+                <br>
+                <br>
+                Password:&emsp14;&emsp14;&emsp14;&emsp14;&emsp14;<input class="inp1" type="password" name="pwd"
+                    id="pwd">
+                <br>
+                <br>
+            </div>
+            <input type="submit" value="Login" style="width: 60px; height: 30px;">
+            <br>
+            <br>
+            <h4 style="color: white; font-family: Arial, sans-serif;">Register Now</h4>
+        </form>
+    </div>
+    <marquee>
+        <h4 style="text-shadow: 5px, 5px, 5px black;">Welcome to the World of Engineering</h4>
+    </marquee>
+    <footer style="font-size: 20px; font-family: Arial, sans-serif;">@copyright SISTec, Gandhi Nagar | Designed &
+        Developed by Adnan Khan</footer>
+
+</body>
+<script>
+    function check() {
+        name = document.getElementById('name').value;
+        pwd = document.getElementById('pwd').value;
+        flag = 1;
+        message = "";
+        m = new Array();
+        let namep = /^[A-Za-z ]+$/;
+
+        if (name == "") {
+            m[0] = "Name is required";
+            flag = 0;
+        }
+        else if (!name.match(namep)) {
+            m[0] = "Name should be only character not number"
+            flag = 0;
+        }
+        else {
+            m[0] = "";
+        }
+        if (pwd == "") {
+            m[1] = "*** Password is required";
+            flag = 0;
+        }
+        else if (pwd.length < 8) {
+            m[1] = "Password should be of more than 8 characters";
+            flag = 0;
+        }
+        else {
+            m[1] = "";
+        }
+        if (flag == 0) {
+            for (let i = 0; i < 2; i++) {
+                message = message + m[i] + "<br>"
+            }
+            document.getElementById('error').innerHTML = message;
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+</script>
+
+</html>

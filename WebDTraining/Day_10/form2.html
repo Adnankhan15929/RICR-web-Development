@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: linear-gradient(to right, rgb(56, 12, 202), rgb(237, 242, 242), rgb(119, 119, 216));
+        }
+        header{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: black;
+            color: white;
+            font-family: cursive;
+            display: flex;
+            justify-content: center;
+            padding: 10px 30px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        h3{
+            color: white;
+        }
+        #div1{
+            background-color: rgb(16, 83, 184);
+            height: 500px;
+            width: 550px;
+            margin: auto;
+            margin-top: 120px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: -20px 20px 20px black;
+            border: 2px solid white;
+        }
+        .inp1{
+            width: 200px;
+            border: 2px solid white;
+            background-color: pink;
+        }
+        table{
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        td{
+            padding: 8px;
+        }
+        footer{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<header>Welcome to SISTec, Gandhi Nagar</header>
+
+<div align="center" id="div1">  
+    <h3 style="font-family:Arial, sans-serif ;">Registration Panel</h3>
+
+<form onsubmit="return check()">
+    <h4 id="error" style="color: rgb(240, 176, 176);"></h4>
+    <br>
+
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input class="inp1" type="text" id="name"></td>
+        </tr>
+
+        <tr>
+            <td>Gender:</td>
+            <td>
+                <input type="radio" name="g"> Male
+                <input type="radio" name="g"> Female
+            </td>
+        </tr>
+
+        <tr>
+            <td>Username:</td>
+            <td><input class="inp1" type="text" id="uname"></td>
+        </tr>
+
+        <tr>
+            <td>Password:</td>
+            <td><input class="inp1" type="password" id="pwd"></td>
+        </tr>
+
+        <tr>
+            <td>Retype Password:</td>
+            <td><input class="inp1" type="password" id="cpwd"></td>
+        </tr>
+
+        <tr>
+            <td>Email:</td>
+            <td><input class="inp1" type="text" id="email"></td>
+        </tr>
+    </table>
+
+    <br>
+
+    <input type="submit" value="Register" style="width: 80px; height: 30px;">
+    <br><br>
+
+    <h4 style="color: white;">Login Panel</h4>
+</form>
+</div>
+
+<footer style="font-size: 20px; font-family: Arial, sans-serif;">@copyright SISTec, Gandhi Nagar | Designed & Developed by Adnan Khan</footer>
+
+</body>
+
+<script>
+function check()
+{
+    name = document.getElementById('name').value;
+    uname = document.getElementById('uname').value;
+    pwd = document.getElementById('pwd').value;
+    cpwd = document.getElementById('cpwd').value;
+    email = document.getElementById('email').value;
+
+    g = document.getElementsByName('g');
+
+    flag = 1;
+    message = "";
+    m = new Array();
+
+    if(name == ""){
+        m[0] = "Name is required";
+        flag = 0;
+    } else { m[0] = ""; }
+
+    if(uname == ""){
+        m[1] = "Username is required";
+        flag = 0;
+    } else { m[1] = ""; }
+
+    gen = 0;
+    for(i=0;i<g.length;i++){
+        if(g[i].checked){
+            gen = 1;
+        }
+    }
+    if(gen == 0){
+        m[2] = "Select Gender";
+        flag = 0;
+    } else { m[2] = ""; }
+
+    if(pwd == ""){
+        m[3] = "Password is required";
+        flag = 0;
+    } 
+    else if(pwd.length < 8){
+        m[3] = "Password must be 8 characters";
+        flag = 0;
+    } else { m[3] = ""; }
+
+    if(cpwd != pwd){
+        m[4] = "Password not matched";
+        flag = 0;
+    } else { m[4] = ""; }
+
+    if(email == ""){
+        m[5] = "Email is required";
+        flag = 0;
+    } else { m[5] = ""; }
+
+    if(flag == 0){
+        for(let i=0;i<6;i++){
+            message = message + m[i] + "<br>";
+        }
+        document.getElementById('error').innerHTML = message;
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+</script>
+
+</html>
