@@ -112,7 +112,7 @@
 // console.log(colors);
 
 // let d=["red","yellow","black"];
-// console.log(d); 
+// console.log(d);
 // d.sort();
 // console.log(d);
 
@@ -128,3 +128,61 @@
 // console.log(arr);
 // arr[0][1]="0";
 // console.log(arr);
+
+// let fav = 'dhoom3';
+// let guess= prompt("Guess the movie");
+// while((guess!=fav)&& (guess!='quit')){
+//     alert("Wrong movie guess");
+//     guess=prompt("Guess the movie");
+// }
+// if(guess==fav){
+//     alert("You guess the right movie");
+// }
+// else{
+//     alert("You quit the game");
+// }
+
+// let fruits = ["banana","mango","apple","kiwi"];
+
+// for(i of fruits){
+//     console.log(i);
+// }
+
+// for(char of fruits){
+//     console.log(char);
+// }
+
+// let todo = [];
+// let req = prompt("plz enter your request");
+// while (true) {
+//   if (req == "quit") {
+//     console.log("quittting app");
+//     break;
+//   }
+//   if (req == "list") {
+//     console.log("---------------");
+//     for (let i = 0; i < todo.length; i++) {
+//       console.log(task[i]);
+//     }
+//     console.log("------------");
+//   }
+//   if (req == "add") {
+//     let task = prompt("Enter the task");
+//     todo.push(task);
+//     console.log("task added");
+//   }
+//   if (req == "delete") {
+//     let idx = prompt("please enter the task index");
+//     todo.splice(idx, 3);
+//     console.log("task delted");
+//   }
+// }
+
+let arr=[1,2,3,4,5,5,8,76,0];
+let num = 2;
+for(let i=0; i<arr.length; i++){
+    if(num!=arr[i]){
+        arr.splice(i,1);
+    }
+}
+console.log(arr);
