@@ -178,11 +178,160 @@
 //   }
 // }
 
-let arr=[1,2,3,4,5,5,8,76,0];
+let arr = [1, 2, 3, 4, 5, 5, 8, 76, 0];
 let num = 2;
-for(let i=0; i<arr.length; i++){
-    if(num!=arr[i]){
-        arr.splice(i,1);
-    }
+for (let i = 0; i < arr.length; i++) {
+  if (num != arr[i]) {
+    arr.splice(i, 1);
+  }
 }
 console.log(arr);
+
+let student = {
+  name: "adnan",
+  age: 23,
+  marks: 90,
+  city: "bhopal",
+};
+
+const obj = {
+  1: "a",
+  2: "b",
+  true: "c",
+  null: "d",
+  undefined: "e",
+};
+
+// const classinfo = {
+//   adnan: {
+//     name: "adnan",
+//     city: "bhopal",
+//   },
+//   ibaad: {
+//     name: "ullah",
+//     city: "afzal colony",
+//   },
+//   khan: {
+//     name: "pathan",
+//     city: "jhangirabad",
+//   },
+// };
+
+// const classinfo = [
+//   { name: "afdsa", id: 123 },
+//   { name: "ullah", city: "afzal colony" },
+//   { name: "pahd", city: "areara colony" },
+// ];
+
+// const max = prompt ("Enter the max num");
+
+// const random = Math.floor(Math.random()*max);
+
+// let guess = prompt("guess the number")
+
+// while(true){
+//     if(guess =="quit"){
+//         break;
+//     }
+//     if(guess==random){
+//         console.log("right");
+//         break;
+//     }
+//     else if(guess<random){
+//         guess = prompt("ur guess is to small")
+//     }
+//     else{
+//         guess=prompt("ur to large")
+//     }
+// }
+
+let dice = Math.floor(Math.random() * 6) + 1;
+console.log(dice);
+
+const car = {
+  name: "fortuner",
+  model: 2023,
+  color: "black",
+};
+console.log(car.name);
+
+const person = {
+  name: "adnan",
+  age: 20,
+  city: "Madhya pradesh",
+};
+console.log(person);
+person.city = "New York";
+person.country = "United States";
+console.log(person);
+
+let number = 10;
+
+let arr45 = [5, 34, 2, 67, 4, 2, 5, 45, 57, 34];
+
+function a(num, arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (num < arr[i]) {
+      console.log(arr[i]);
+    }
+  }
+}
+
+a(number, arr45);
+
+let str1 = "abcdefffjejiorewrnmiweqpiomzxcxzcjkashlu";
+let ans="";
+function ar(str,ans) {
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (ans.indexOf(char) == -1) {
+      ans += char;
+    }
+  }
+  return ans;
+}
+console.log(ar(str1,ans));
+
+
+let country = ["Australia","Germany","United State of America"];
+let ans1;
+function c(c,a){
+    let max;
+    let ind;
+    for(let i=0; i<c.length; i++){
+        let l=c[i].length;
+         ind = i;
+        if(l>max){
+            ind=i;
+            max=l;
+        }
+    }
+    a = c[ind];
+    return a;
+}
+console.log(c(country,ans1));
+
+
+function countVowels(str){
+    let co=0;
+    for(let i=0 ; i<str.length; i++){
+        if(str.charAt(i)=='u' || str.charAt(i)=='o' || str.charAt(i)=='i' || str.charAt(i)=='e' || str.charAt(i)=='a'){
+            co++;
+        }
+    }
+    return co;
+}
+let st = "aeughj"
+console.log(countVowels(st));
+
+
+
+console.log("----------------------------");
+let start = 100;
+let end = 200;
+function ran(s,e) {
+    let diff = e-s;
+    return Math.floor(Math.random()*diff)+s;
+}
+
+console.log(ran(start,end));
