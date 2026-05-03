@@ -334,4 +334,128 @@ function ran(s,e) {
     return Math.floor(Math.random()*diff)+s;
 }
 
-console.log(ran(start,end));
+console.log(ran(start,end));  
+
+
+
+
+
+
+
+
+
+
+console.log("-----------------------");
+const stu={
+  name:"adnan",
+  age:34,
+  hin:34,
+  eng:54,
+  math:43,
+  getAVG(){
+    console.log(this);
+    // let avg = (hin+eng+math)/3;
+    let avg = (this.hin+this.eng+this.math)/3;
+    // console.log(`${name} got avg marks  =  ${avg}`);
+    console.log(`${this.name} got avg marks  =  ${avg}`);
+  }
+}
+
+function getAVG(){
+    console.log(this);
+    // let avg = (this.hin+this.eng+this.math)/3;
+    // console.log(`${name} got avg marks  =  ${avg}`);
+  }
+
+ try {
+  console.log(t);
+ }
+ catch(err){
+  console.log("variable t doesnt exist");
+  console.log(err);
+ }
+
+
+
+
+ //Arrow function
+ const sum = (g,h)=>{
+  console.log(g+h);
+ }
+
+ const cube = np=>{
+  return np*np*np;
+ }
+
+ const power=(ab,cd)=>{
+  return ab**cd;
+ }
+
+ const hello =()=>{
+  console.log("hello world");
+ }
+
+const mul = (a,b)=>(a*b); //implicit return and use parathisis 
+
+
+
+//set timeout func
+console.log("hello");
+setTimeout(()=>{ 
+  console.log("SISTEC");
+},4000); //4000 = 4 seconds and settimeout func se baki ka code nhi rukta chlta rhta h 
+console.log("brother");
+
+
+
+//SET INTERVAL
+// setInterval(()=>{ //infinte chlta h 
+//   console.log("Sagar institute");
+// },2000);
+
+// let id = setInterval(()=>{ 
+//   console.log("Sr. institute");
+// },2000);
+// let id2 = setInterval(()=>{ 
+//   console.log("Sage");
+// },1000);
+//setinterval ko rokne ke liye use hota h clearInterval 
+
+
+
+let yua = 90; //global scope
+const s={ //global scope
+  name:"adnnan",
+  marks:34,
+  age:20,
+  prop:this, //global scope
+  getName:function (){ //normal func usi ko apna this manta h jisne usko call lgai h
+    console.log(this); //normal func ke liye this ki value hoti h student ke equal yani student ke andr ke cheeze
+    return this.name;
+  },
+  getMarks:()=>{ // arrow func usi ko apna this manta h jisne uske parent ko call lagai h
+    console.log(this); //arrow func ke liye this ki value hoti h student ke parent ke equal yani windows ke andr ki cheeze
+    return this.marks;
+  },
+  getInfo1:function(){
+    setTimeout(()=>{
+      console.log(this); //student
+    },2000);
+  },
+  getInfo2:function(){
+    setTimeout(function() {
+      console.log(this); //window
+    }, 2000);
+  }
+}
+
+const arrayAverage= (arr) =>{
+  let total =0;
+  for(let i of arr){
+    total +=i;
+  }
+  return total/arr.length;
+}
+
+let arr334 = [3,2,4,65,4];
+arrayAverage(arr334);
