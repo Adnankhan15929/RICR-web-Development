@@ -459,3 +459,5 @@ const arrayAverage= (arr) =>{
 
 let arr334 = [3,2,4,65,4];
 arrayAverage(arr334);
+
+
