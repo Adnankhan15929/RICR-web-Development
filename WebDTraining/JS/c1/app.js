@@ -1,463 +1,602 @@
-// let pencil = 10;
-// let pen = 12;
-// // console.log("the total price is "+pencil+pen);
-// let output = `The total is : ${pencil+pen} Rupees.`;
-// console.log(output);
+// // let pencil = 10;
+// // let pen = 12;
+// // // console.log("the total price is "+pencil+pen);
+// // let output = `The total is : ${pencil+pen} Rupees.`;
+// // console.log(output);
 
-// alert("asjdfjasdkfj");
-// console.error("sdafasdfasiufo");
-// console.warn("sdafasdfasiufo");
+// // alert("asjdfjasdkfj");
+// // console.error("sdafasdfasiufo");
+// // console.warn("sdafasdfasiufo");
 
-// let name = prompt("Enter your name: ");
-// console.log(name);
+// // let name = prompt("Enter your name: ");
+// // console.log(name);
 
-// let first = prompt("Enter your name:");
-// console.log("Welcome"+first);
-// console.error("Error"+first);
-// console.error("Error",first);
+// // let first = prompt("Enter your name:");
+// // console.log("Welcome"+first);
+// // console.error("Error"+first);
+// // console.error("Error",first);
 
-// let name = prompt("Enter your name:");
-// let age = prompt("Enter your age:");
-// alert(name+" is "+age+" years old.");
+// // let name = prompt("Enter your name:");
+// // let age = prompt("Enter your age:");
+// // alert(name+" is "+age+" years old.");
 
-// let q=Number(prompt("Enter your quarter:"));
-// switch(q){
-//     case 1:
-//         console.log("j, f, m");
-//         break
-//     case 2:
-//         console.log("amj");
-//         break;
-//     case 3:
-//         console.log("jas");
-//         break;
-//     case 4:
-//         console.log("ond");
-//         break;
-//     default:
-//         console.log("invalid");
-//         break;
+// // let q=Number(prompt("Enter your quarter:"));
+// // switch(q){
+// //     case 1:
+// //         console.log("j, f, m");
+// //         break
+// //     case 2:
+// //         console.log("amj");
+// //         break;
+// //     case 3:
+// //         console.log("jas");
+// //         break;
+// //     case 4:
+// //         console.log("ond");
+// //         break;
+// //     default:
+// //         console.log("invalid");
+// //         break;
+// // }
+
+// // let h = "       jaskfjaskdlj            ";
+// // console.log(h);
+// // console.log(typeof h);
+// // h=h.trim();
+// // console.log(h);
+// // console.log(typeof h);
+
+// // let n="adnan khan";
+// // console.log(n);
+// // n=n.toUpperCase();
+// // console.log(n);
+// // n=n.toLowerCase();
+// // console.log(n);
+
+// // let a="welcome";
+// // console.log(a.indexOf("l"));
+// // console.log(a.indexOf("p"));
+
+// // let k="     asdfsdf asdfasd      ";
+// // console.log(k.toUpperCase().trim());
+
+// // let para = "adnan";
+// // console.log(para.slice(0));
+// // console.log(para.slice(2));
+// // console.log(para.slice(-1));
+// // console.log(para.slice(-3,5));
+// // console.log(para.slice(3,5));
+
+// // let name="Adnan khan";
+// // console.log(name.replace("khan","pahtan"));
+// // console.log(name.replace("k","p"));
+// // console.log(name.repeat(3));
+
+// // let arr = [1,23,4];
+// // console.log(arr);
+
+// // let cars = ["bmw","royalenfield"];
+// // cars.push("hmalaena");
+// // console.log(cars);
+// // cars.pop();
+// // console.log(cars);
+// // cars.unshift("bansdnas");
+// // console.log(cars);
+// // cars.shift();
+// // console.log(cars);
+
+// // let p = ["323","adnan","234",23];
+// // console.log(p.includes(323));
+// // console.log(p.includes("adnan"));
+
+// // let p = ["323","adnan","234",23];
+// // let d=[23,34,12,"nsadf","wer"];
+// // console.log(p.concat(d));
+// // console.log(d.reverse());
+// // console.log(d);
+
+// // let colors=["red","yellow","black"];
+// // console.log(colors.splice(1));
+// // console.log(colors);
+// // colors=["red","yellow","black"];
+// // console.log(colors.splice(0,1));
+// // console.log(colors);
+// // console.log(colors.splice(1,2));
+// // console.log(colors);
+// // colors=["red","yellow","black"];
+// // console.log(colors.splice(1,2,"asdfas","asdfasdf"));
+// // console.log(colors);
+// // console.log(colors.splice(1,0,"mercedes"));
+// // console.log(colors);
+// // console.log(colors.splice(1,1,"BMW"));
+// // console.log(colors);
+
+// // let d=["red","yellow","black"];
+// // console.log(d);
+// // d.sort();
+// // console.log(d);
+
+// // let pq = ["jan","jul","mar","aug"];
+// // console.log(pq);
+// // pq.splice(0,2, "july","june");
+// // console.log(pq);
+
+// // let lan= ["c","c++","hmtl","javascrit","python","java"];
+// // console.log(lan.reverse().indexOf("javascrit"));
+
+// // let arr = [["x",null,"0"],[null,"x",null],["0",null,"x"]];
+// // console.log(arr);
+// // arr[0][1]="0";
+// // console.log(arr);
+
+// // let fav = 'dhoom3';
+// // let guess= prompt("Guess the movie");
+// // while((guess!=fav)&& (guess!='quit')){
+// //     alert("Wrong movie guess");
+// //     guess=prompt("Guess the movie");
+// // }
+// // if(guess==fav){
+// //     alert("You guess the right movie");
+// // }
+// // else{
+// //     alert("You quit the game");
+// // }
+
+// // let fruits = ["banana","mango","apple","kiwi"];
+
+// // for(i of fruits){
+// //     console.log(i);
+// // }
+
+// // for(char of fruits){
+// //     console.log(char);
+// // }
+
+// // let todo = [];
+// // let req = prompt("plz enter your request");
+// // while (true) {
+// //   if (req == "quit") {
+// //     console.log("quittting app");
+// //     break;
+// //   }
+// //   if (req == "list") {
+// //     console.log("---------------");
+// //     for (let i = 0; i < todo.length; i++) {
+// //       console.log(task[i]);
+// //     }
+// //     console.log("------------");
+// //   }
+// //   if (req == "add") {
+// //     let task = prompt("Enter the task");
+// //     todo.push(task);
+// //     console.log("task added");
+// //   }
+// //   if (req == "delete") {
+// //     let idx = prompt("please enter the task index");
+// //     todo.splice(idx, 3);
+// //     console.log("task delted");
+// //   }
+// // }
+
+// let arr = [1, 2, 3, 4, 5, 5, 8, 76, 0];
+// let num = 2;
+// for (let i = 0; i < arr.length; i++) {
+//   if (num != arr[i]) {
+//     arr.splice(i, 1);
+//   }
 // }
-
-// let h = "       jaskfjaskdlj            ";
-// console.log(h);
-// console.log(typeof h);
-// h=h.trim();
-// console.log(h);
-// console.log(typeof h);
-
-// let n="adnan khan";
-// console.log(n);
-// n=n.toUpperCase();
-// console.log(n);
-// n=n.toLowerCase();
-// console.log(n);
-
-// let a="welcome";
-// console.log(a.indexOf("l"));
-// console.log(a.indexOf("p"));
-
-// let k="     asdfsdf asdfasd      ";
-// console.log(k.toUpperCase().trim());
-
-// let para = "adnan";
-// console.log(para.slice(0));
-// console.log(para.slice(2));
-// console.log(para.slice(-1));
-// console.log(para.slice(-3,5));
-// console.log(para.slice(3,5));
-
-// let name="Adnan khan";
-// console.log(name.replace("khan","pahtan"));
-// console.log(name.replace("k","p"));
-// console.log(name.repeat(3));
-
-// let arr = [1,23,4];
 // console.log(arr);
 
-// let cars = ["bmw","royalenfield"];
-// cars.push("hmalaena");
-// console.log(cars);
-// cars.pop();
-// console.log(cars);
-// cars.unshift("bansdnas");
-// console.log(cars);
-// cars.shift();
-// console.log(cars);
-
-// let p = ["323","adnan","234",23];
-// console.log(p.includes(323));
-// console.log(p.includes("adnan"));
-
-// let p = ["323","adnan","234",23];
-// let d=[23,34,12,"nsadf","wer"];
-// console.log(p.concat(d));
-// console.log(d.reverse());
-// console.log(d);
-
-// let colors=["red","yellow","black"];
-// console.log(colors.splice(1));
-// console.log(colors);
-// colors=["red","yellow","black"];
-// console.log(colors.splice(0,1));
-// console.log(colors);
-// console.log(colors.splice(1,2));
-// console.log(colors);
-// colors=["red","yellow","black"];
-// console.log(colors.splice(1,2,"asdfas","asdfasdf"));
-// console.log(colors);
-// console.log(colors.splice(1,0,"mercedes"));
-// console.log(colors);
-// console.log(colors.splice(1,1,"BMW"));
-// console.log(colors);
-
-// let d=["red","yellow","black"];
-// console.log(d);
-// d.sort();
-// console.log(d);
-
-// let pq = ["jan","jul","mar","aug"];
-// console.log(pq);
-// pq.splice(0,2, "july","june");
-// console.log(pq);
-
-// let lan= ["c","c++","hmtl","javascrit","python","java"];
-// console.log(lan.reverse().indexOf("javascrit"));
-
-// let arr = [["x",null,"0"],[null,"x",null],["0",null,"x"]];
-// console.log(arr);
-// arr[0][1]="0";
-// console.log(arr);
-
-// let fav = 'dhoom3';
-// let guess= prompt("Guess the movie");
-// while((guess!=fav)&& (guess!='quit')){
-//     alert("Wrong movie guess");
-//     guess=prompt("Guess the movie");
-// }
-// if(guess==fav){
-//     alert("You guess the right movie");
-// }
-// else{
-//     alert("You quit the game");
-// }
-
-// let fruits = ["banana","mango","apple","kiwi"];
-
-// for(i of fruits){
-//     console.log(i);
-// }
-
-// for(char of fruits){
-//     console.log(char);
-// }
-
-// let todo = [];
-// let req = prompt("plz enter your request");
-// while (true) {
-//   if (req == "quit") {
-//     console.log("quittting app");
-//     break;
-//   }
-//   if (req == "list") {
-//     console.log("---------------");
-//     for (let i = 0; i < todo.length; i++) {
-//       console.log(task[i]);
-//     }
-//     console.log("------------");
-//   }
-//   if (req == "add") {
-//     let task = prompt("Enter the task");
-//     todo.push(task);
-//     console.log("task added");
-//   }
-//   if (req == "delete") {
-//     let idx = prompt("please enter the task index");
-//     todo.splice(idx, 3);
-//     console.log("task delted");
-//   }
-// }
-
-let arr = [1, 2, 3, 4, 5, 5, 8, 76, 0];
-let num = 2;
-for (let i = 0; i < arr.length; i++) {
-  if (num != arr[i]) {
-    arr.splice(i, 1);
-  }
-}
-console.log(arr);
-
-let student = {
-  name: "adnan",
-  age: 23,
-  marks: 90,
-  city: "bhopal",
-};
-
-const obj = {
-  1: "a",
-  2: "b",
-  true: "c",
-  null: "d",
-  undefined: "e",
-};
-
-// const classinfo = {
-//   adnan: {
-//     name: "adnan",
-//     city: "bhopal",
-//   },
-//   ibaad: {
-//     name: "ullah",
-//     city: "afzal colony",
-//   },
-//   khan: {
-//     name: "pathan",
-//     city: "jhangirabad",
-//   },
+// let student = {
+//   name: "adnan",
+//   age: 23,
+//   marks: 90,
+//   city: "bhopal",
 // };
 
-// const classinfo = [
-//   { name: "afdsa", id: 123 },
-//   { name: "ullah", city: "afzal colony" },
-//   { name: "pahd", city: "areara colony" },
-// ];
+// const obj = {
+//   1: "a",
+//   2: "b",
+//   true: "c",
+//   null: "d",
+//   undefined: "e",
+// };
 
-// const max = prompt ("Enter the max num");
+// // const classinfo = {
+// //   adnan: {
+// //     name: "adnan",
+// //     city: "bhopal",
+// //   },
+// //   ibaad: {
+// //     name: "ullah",
+// //     city: "afzal colony",
+// //   },
+// //   khan: {
+// //     name: "pathan",
+// //     city: "jhangirabad",
+// //   },
+// // };
 
-// const random = Math.floor(Math.random()*max);
+// // const classinfo = [
+// //   { name: "afdsa", id: 123 },
+// //   { name: "ullah", city: "afzal colony" },
+// //   { name: "pahd", city: "areara colony" },
+// // ];
 
-// let guess = prompt("guess the number")
+// // const max = prompt ("Enter the max num");
 
-// while(true){
-//     if(guess =="quit"){
-//         break;
+// // const random = Math.floor(Math.random()*max);
+
+// // let guess = prompt("guess the number")
+
+// // while(true){
+// //     if(guess =="quit"){
+// //         break;
+// //     }
+// //     if(guess==random){
+// //         console.log("right");
+// //         break;
+// //     }
+// //     else if(guess<random){
+// //         guess = prompt("ur guess is to small")
+// //     }
+// //     else{
+// //         guess=prompt("ur to large")
+// //     }
+// // }
+
+// let dice = Math.floor(Math.random() * 6) + 1;
+// console.log(dice);
+
+// const car = {
+//   name: "fortuner",
+//   model: 2023,
+//   color: "black",
+// };
+// console.log(car.name);
+
+// const person = {
+//   name: "adnan",
+//   age: 20,
+//   city: "Madhya pradesh",
+// };
+// console.log(person);
+// person.city = "New York";
+// person.country = "United States";
+// console.log(person);
+
+// let number = 10;
+
+// let arr45 = [5, 34, 2, 67, 4, 2, 5, 45, 57, 34];
+
+// function a(num, arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (num < arr[i]) {
+//       console.log(arr[i]);
 //     }
-//     if(guess==random){
-//         console.log("right");
-//         break;
-//     }
-//     else if(guess<random){
-//         guess = prompt("ur guess is to small")
-//     }
-//     else{
-//         guess=prompt("ur to large")
-//     }
+//   }
 // }
 
-let dice = Math.floor(Math.random() * 6) + 1;
-console.log(dice);
+// a(number, arr45);
 
-const car = {
-  name: "fortuner",
-  model: 2023,
-  color: "black",
+// let str1 = "abcdefffjejiorewrnmiweqpiomzxcxzcjkashlu";
+// let ans="";
+// function ar(str,ans) {
+//   for (let i = 0; i < str.length; i++) {
+//     let char = str[i];
+//     if (ans.indexOf(char) == -1) {
+//       ans += char;
+//     }
+//   }
+//   return ans;
+// }
+// console.log(ar(str1,ans));
+
+// let country = ["Australia","Germany","United State of America"];
+// let ans1;
+// function c(c,a){
+//     let max;
+//     let ind;
+//     for(let i=0; i<c.length; i++){
+//         let l=c[i].length;
+//          ind = i;
+//         if(l>max){
+//             ind=i;
+//             max=l;
+//         }
+//     }
+//     a = c[ind];
+//     return a;
+// }
+// console.log(c(country,ans1));
+
+// function countVowels(str){
+//     let co=0;
+//     for(let i=0 ; i<str.length; i++){
+//         if(str.charAt(i)=='u' || str.charAt(i)=='o' || str.charAt(i)=='i' || str.charAt(i)=='e' || str.charAt(i)=='a'){
+//             co++;
+//         }
+//     }
+//     return co;
+// }
+// let st = "aeughj"
+// console.log(countVowels(st));
+
+// console.log("----------------------------");
+// let start = 100;
+// let end = 200;
+// function ran(s,e) {
+//     let diff = e-s;
+//     return Math.floor(Math.random()*diff)+s;
+// }
+
+// console.log(ran(start,end));
+
+// console.log("-----------------------");
+// const stu={
+//   name:"adnan",
+//   age:34,
+//   hin:34,
+//   eng:54,
+//   math:43,
+//   getAVG(){
+//     console.log(this);
+//     // let avg = (hin+eng+math)/3;
+//     let avg = (this.hin+this.eng+this.math)/3;
+//     // console.log(`${name} got avg marks  =  ${avg}`);
+//     console.log(`${this.name} got avg marks  =  ${avg}`);
+//   }
+// }
+
+// function getAVG(){
+//     console.log(this);
+//     // let avg = (this.hin+this.eng+this.math)/3;
+//     // console.log(`${name} got avg marks  =  ${avg}`);
+//   }
+
+//  try {
+//   console.log(t);
+//  }
+//  catch(err){
+//   console.log("variable t doesnt exist");
+//   console.log(err);
+//  }
+
+//  //Arrow function
+//  const sum = (g,h)=>{
+//   console.log(g+h);
+//  }
+
+//  const cube = np=>{
+//   return np*np*np;
+//  }
+
+//  const power=(ab,cd)=>{
+//   return ab**cd;
+//  }
+
+//  const hello =()=>{
+//   console.log("hello world");
+//  }
+
+// const mul = (a,b)=>(a*b); //implicit return and use parathisis
+
+// //set timeout func
+// console.log("hello");
+// setTimeout(()=>{
+//   console.log("SISTEC");
+// },4000); //4000 = 4 seconds and settimeout func se baki ka code nhi rukta chlta rhta h
+// console.log("brother");
+
+// //SET INTERVAL
+// // setInterval(()=>{ //infinte chlta h
+// //   console.log("Sagar institute");
+// // },2000);
+
+// // let id = setInterval(()=>{
+// //   console.log("Sr. institute");
+// // },2000);
+// // let id2 = setInterval(()=>{
+// //   console.log("Sage");
+// // },1000);
+// //setinterval ko rokne ke liye use hota h clearInterval
+
+// let yua = 90; //global scope
+// const s={ //global scope
+//   name:"adnnan",
+//   marks:34,
+//   age:20,
+//   prop:this, //global scope
+//   getName:function (){ //normal func usi ko apna this manta h jisne usko call lgai h
+//     console.log(this); //normal func ke liye this ki value hoti h student ke equal yani student ke andr ke cheeze
+//     return this.name;
+//   },
+//   getMarks:()=>{ // arrow func usi ko apna this manta h jisne uske parent ko call lagai h
+//     console.log(this); //arrow func ke liye this ki value hoti h student ke parent ke equal yani windows ke andr ki cheeze
+//     return this.marks;
+//   },
+//   getInfo1:function(){
+//     setTimeout(()=>{
+//       console.log(this); //student
+//     },2000);
+//   },
+//   getInfo2:function(){
+//     setTimeout(function() {
+//       console.log(this); //window
+//     }, 2000);
+//   }
+// }
+
+// const arrayAverage= (arr) =>{
+//   let total =0;
+//   for(let i of arr){
+//     total +=i;
+//   }
+//   return total/arr.length;
+// }
+
+// let arr334 = [3,2,4,65,4];
+// arrayAverage(arr334);
+
+"------------------------------------------------------------------------------------------------------------------------------------------------";
+
+//-------------------------------------------Array
+// let arr = [1, 2, 3, 4, 5];
+//  let print = function(el){
+//   console.log(el);
+//  }
+//  arr.forEach(print);
+
+// arr.forEach(function(el){
+//   console.log(el);
+// })
+
+// arr.forEach((el)=>{
+//   console.log(el);
+// })
+
+// let array = [
+//   {
+//     name: "and",
+//     marks: 34,
+//   },
+//   {
+//     name: "andna",
+//     marks: 90,
+//   },
+//   {
+//     name: "kk",
+//     marks: 34,
+//   },
+// ];
+// array.forEach((student)=>{
+//   console.log(student.name);
+//   console.log(student.marks);
+// })
+
+//-----map
+let originalarr = [1, 23, 4, 5];
+let newarr = originalarr.map((m) => {
+  return m ** m;
+});
+
+//-------filter
+let num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let ans = num.filter((el) => {
+  return el % 2 == 0; //true hoto ans me add kro warna mt kro
+});
+
+//--Every func beahve like AND operator
+console.log(
+  [4, 2, 2, 1].every((el) => {
+    return el % 2 == 0;
+  }),
+);
+
+//----Some fucn behave like OR operator
+console.log(
+  [1, 3, 3, 5, 10].some((el) => {
+    return el % 2 == 0;
+  }),
+);
+
+//------Reduce return single value
+console.log([1, 2, 3, 4].reduce((res, el) => res + el));
+
+let arr1 = [1,2,5,7,3,6,3,56,76];
+let max=arr1.reduce((max,el)=>{
+  if(max<el){
+    return el;
+  }
+  else {
+    return max;
+  }
+});
+
+console.log([20,90,40,2].every((el)=>{
+ return el%10==0;
+}));
+
+
+let min=0;
+console.log([3,10,4,-5,8].reduce((min,el)=>{
+  if(min>el){
+    return el;
+  }
+  else{
+    return min;
+  }
+}));
+
+
+//---spread use to spread the array or string
+let name = "adnankhan";
+let m = [3,6,4,6];
+console.log(name);
+console.log(...name);
+console.log(m);
+console.log(...m);
+
+let newarre = [m];
+console.log(newarre);
+
+let data = {
+  email:"asdfasdf@gmail.con",
+  pass: "asdfas",
 };
-console.log(car.name);
 
-const person = {
-  name: "adnan",
-  age: 20,
-  city: "Madhya pradesh",
+const dataCopy = {...data,id:123,name:"adnan"};
+const obj = {...m};
+
+
+
+//----------Rest 
+function sum10(...args){
+  return args.reduce((sum,el)=>sum+el);
+}
+
+
+
+
+//destructuring
+let names = ["andn","kk","iru","khan"];
+let [win,runnerup, ...others]=names;
+console.log(win);
+console.log(runnerup);
+console.log(others);
+
+
+const stu = {
+  name:"raja",
+  age:45,
+  class3:9,
+  sub:["hin","eng","math"],
 };
-console.log(person);
-person.city = "New York";
-person.country = "United States";
-console.log(person);
-
-let number = 10;
-
-let arr45 = [5, 34, 2, 67, 4, 2, 5, 45, 57, 34];
-
-function a(num, arr) {
-  for (let i = 0; i < arr.length; i++) {
-    if (num < arr[i]) {
-      console.log(arr[i]);
-    }
-  }
-}
-
-a(number, arr45);
-
-let str1 = "abcdefffjejiorewrnmiweqpiomzxcxzcjkashlu";
-let ans="";
-function ar(str,ans) {
-  for (let i = 0; i < str.length; i++) {
-    let char = str[i];
-    if (ans.indexOf(char) == -1) {
-      ans += char;
-    }
-  }
-  return ans;
-}
-console.log(ar(str1,ans));
+let {age,class3:u, city="bhopal"}=stu;
+console.log(age);
+console.log(u);
+console.log(city);
 
 
-let country = ["Australia","Germany","United State of America"];
-let ans1;
-function c(c,a){
-    let max;
-    let ind;
-    for(let i=0; i<c.length; i++){
-        let l=c[i].length;
-         ind = i;
-        if(l>max){
-            ind=i;
-            max=l;
-        }
-    }
-    a = c[ind];
-    return a;
-}
-console.log(c(country,ans1));
+//QS
+let arrayy = [3,2,1,4];
+const square = arrayy.map((arrayy)=> arrayy*arrayy);
+console.log(square);
+const sum = arrayy.reduce((res,el) => res+el,0);
+console.log(sum);
+console.log(sum/arrayy.length);
 
+console.log(arrayy.map((el)=>el+5))
+console.log(["a",'b','c'].map((el)=>el.toUpperCase()));
 
-function countVowels(str){
-    let co=0;
-    for(let i=0 ; i<str.length; i++){
-        if(str.charAt(i)=='u' || str.charAt(i)=='o' || str.charAt(i)=='i' || str.charAt(i)=='e' || str.charAt(i)=='a'){
-            co++;
-        }
-    }
-    return co;
-}
-let st = "aeughj"
-console.log(countVowels(st));
+const dARA=(ary, ...args1)=>[
+  ...ary,
+  ...args1.map((v)=>v*2)
+]
+console.log(dARA([1,2,3,4],4,4));
+dARA([1],10,4);
 
-
-
-console.log("----------------------------");
-let start = 100;
-let end = 200;
-function ran(s,e) {
-    let diff = e-s;
-    return Math.floor(Math.random()*diff)+s;
-}
-
-console.log(ran(start,end));  
-
-
-
-
-
-
-
-
-
-
-console.log("-----------------------");
-const stu={
-  name:"adnan",
-  age:34,
-  hin:34,
-  eng:54,
-  math:43,
-  getAVG(){
-    console.log(this);
-    // let avg = (hin+eng+math)/3;
-    let avg = (this.hin+this.eng+this.math)/3;
-    // console.log(`${name} got avg marks  =  ${avg}`);
-    console.log(`${this.name} got avg marks  =  ${avg}`);
-  }
-}
-
-function getAVG(){
-    console.log(this);
-    // let avg = (this.hin+this.eng+this.math)/3;
-    // console.log(`${name} got avg marks  =  ${avg}`);
-  }
-
- try {
-  console.log(t);
- }
- catch(err){
-  console.log("variable t doesnt exist");
-  console.log(err);
- }
-
-
-
-
- //Arrow function
- const sum = (g,h)=>{
-  console.log(g+h);
- }
-
- const cube = np=>{
-  return np*np*np;
- }
-
- const power=(ab,cd)=>{
-  return ab**cd;
- }
-
- const hello =()=>{
-  console.log("hello world");
- }
-
-const mul = (a,b)=>(a*b); //implicit return and use parathisis 
-
-
-
-//set timeout func
-console.log("hello");
-setTimeout(()=>{ 
-  console.log("SISTEC");
-},4000); //4000 = 4 seconds and settimeout func se baki ka code nhi rukta chlta rhta h 
-console.log("brother");
-
-
-
-//SET INTERVAL
-// setInterval(()=>{ //infinte chlta h 
-//   console.log("Sagar institute");
-// },2000);
-
-// let id = setInterval(()=>{ 
-//   console.log("Sr. institute");
-// },2000);
-// let id2 = setInterval(()=>{ 
-//   console.log("Sage");
-// },1000);
-//setinterval ko rokne ke liye use hota h clearInterval 
-
-
-
-let yua = 90; //global scope
-const s={ //global scope
-  name:"adnnan",
-  marks:34,
-  age:20,
-  prop:this, //global scope
-  getName:function (){ //normal func usi ko apna this manta h jisne usko call lgai h
-    console.log(this); //normal func ke liye this ki value hoti h student ke equal yani student ke andr ke cheeze
-    return this.name;
-  },
-  getMarks:()=>{ // arrow func usi ko apna this manta h jisne uske parent ko call lagai h
-    console.log(this); //arrow func ke liye this ki value hoti h student ke parent ke equal yani windows ke andr ki cheeze
-    return this.marks;
-  },
-  getInfo1:function(){
-    setTimeout(()=>{
-      console.log(this); //student
-    },2000);
-  },
-  getInfo2:function(){
-    setTimeout(function() {
-      console.log(this); //window
-    }, 2000);
-  }
-}
-
-const arrayAverage= (arr) =>{
-  let total =0;
-  for(let i of arr){
-    total +=i;
-  }
-  return total/arr.length;
-}
-
-let arr334 = [3,2,4,65,4];
-arrayAverage(arr334);
-
-
+const mObj = (o1,o2)=>({
+  ...o1,...o2
+});
+console.log(mObj({a:1,b:2,c:3},{d:3,k:0}));
