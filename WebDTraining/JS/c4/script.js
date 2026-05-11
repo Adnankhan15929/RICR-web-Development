@@ -17,26 +17,28 @@
 //   });
 // }
 
-let btn = document.querySelector("button");
-let inp = document.querySelector("input");
-let list = document.querySelector("ul");
-btn.addEventListener("click", function () {
-  let item = document.createElement("li");
-  item.innerText = inp.value;
+// let btn = document.querySelector("button");
+// let inp = document.querySelector("input");
+// let ul = document.querySelector("ul");
+// btn.addEventListener("click", function () {
+//   let item = document.createElement("li");
+//   item.innerText = inp.value;
 
-  let delbtn = document.createElement("button");
-  delbtn.innerText = "delete";
-  delbtn.classList.add("delete");
+//   let delbtn = document.createElement("button");
+//   delbtn.innerText = "delete";
+//   delbtn.classList.add("delete");
 
-  item.appendChild(delbtn);
-  list.appendChild(item);
-  inp.value = "";
-});
+//   item.appendChild(delbtn);
+//   ul.appendChild(item);
+//   inp.value = "";
+// });
 
-let delbtns = document.querySelectorAll('.delete');
-for (delbt of delbtns){
-    delbt.addEventListener('click',function(){
-        let par = delbt.parentElement;
-        par.remove();
-    })
-}
+// ul.addEventListener("click", function (event) {
+//     console.log(event.target);
+//   if (event.target.nodeName == "BUTTON") {
+//     let ulItem = event.target.parentElement;
+//     ulItem.remove();
+//   }
+// });
+
+
