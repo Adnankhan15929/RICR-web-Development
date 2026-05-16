@@ -20,7 +20,6 @@ function levelUp() {
   let randbtn = document.querySelector(`.${randcolor}`);
   gameFlash(randbtn);
 }
-
 function btnPress() {
   let btn = this;
   console.log(this);
